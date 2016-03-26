@@ -17,8 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'www')));
 
 // app.use('/', require('./routes/index'));
-// app.use('/users', require('./routes/users'));
-// app.use('/inventory', require('./routes/inventory'));
+app.use('/users', require('./routes/users'));
+app.use('/inventory', require('./routes/inventory'));
 var port = 3000;
 app.set('port', port);
 

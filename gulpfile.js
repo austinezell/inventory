@@ -13,7 +13,7 @@ var webpack = require('webpack');
 var paths = {
   src: {
     sass: './src/scss/**/*.scss',
-    javascript: './src/js/index.js',
+    javascript: './src/js/**/*.js',
     templates: './src/templates/**/*.html',
     assets: './src/assets/**/*'
   },

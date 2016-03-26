@@ -18,14 +18,14 @@
     <script src="lib/ionic/js/ionic.bundle.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="./lib/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="./lib/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
 
     <!-- your app's js -->
     <script src="./js/dist/bundle.js"></script>
   </head>
   <body ng-app="inventory">
-    <ng-include src="'./templates/nav.html'"></ng-include>
-
-    <script src="./lib/jquery/dist/jquery.min.js" charset="utf-8"></script>
-    <script src="./lib/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <!-- <ng-include src="'./templates/nav.html'"></ng-include> -->
+    <ion-nav-view></ion-nav-view>
   </body>
 </html>
