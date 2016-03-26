@@ -1,0 +1,110 @@
+<ion-view>
+  <ion-content>
+    <div class="container" id="edit-item">
+
+      <div class="row title-row">
+        <h1>ADD ITEM</h1>
+      </div>
+
+      <div class="row save-row">
+        <a href="./item-detail.html" class="save-btn fa fa-save"></a>
+      </div>
+
+      <div class="row info-row">
+        <h2>TITLE:</h2>
+        <input type="text">
+      </div>
+
+      <div class="row info-row">
+        <h2>PICTURES:</h2>
+        <div class="picture-row">
+          <a href="" class="new-pic btn fa fa-camera"></a>
+          <img src="http://placehold.it/175" alt="">
+          <img src="http://placehold.it/175" alt="">
+        </div>
+      </div>
+
+      <div class="row info-row">
+        <h2>Description:</h2>
+        <textarea name="" id="" cols="30" rows="4"></textarea>
+      </div>
+
+      <div class="row input-row">
+        <label for="location">LOCATION:</label>
+        <br>
+        <div class="select">
+          <select name="location" id="location">
+            <option value="ch1">CH 1</option>
+            <option value="ch2">CH 2</option>
+            <option value="ch1-ch2">CH 1 + CH 2</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row input-row">
+        <label for="department">DEPARTMENT:</label>
+        <br>
+        <div class="select">
+          <select name="department" id="department">
+            <option value="maintenance">HOUSEHOLD</option>
+            <option value="food-service">FOOD SERVICE</option>
+            <option value="office">OFFICE</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row info-row">
+        <h2>KEYWORDS:</h2>
+        <input type="text">
+      </div>
+
+      <div class="row info-row">
+        <h2>UPC CODE:</h2>
+        <input type="number">
+      </div>
+
+      <div class="row info-row">
+        <h2>ITEM # / MODEL #:</h2>
+        <input type="number">
+      </div>
+
+      <div class="row info-row">
+        <h2>PREFERRED VENDOR:</h2>
+        <input type="text">
+      </div>
+
+      <div class="row info-row">
+        <h2>AMOUNT TO STOCK:</h2>
+        <h3>CH 1:</h3>
+        <br>
+        <label for="ch1-num">Amount:</label>
+        <input type="number" name="ch1-num" class="num" min="1">
+        <br>
+        <label for="ch1-units">Units (e.g. rolls/boxes):</label>
+        <input type="text" name="ch1-units" class="units">
+        <br>
+        <h3>CH 2:</h3>
+        <br>
+        <label for="ch2-num">Amount:</label>
+        <input type="number" name="ch2-num" class="num" min="1">
+        <label for="ch2-units">Units:</label>
+        <input type="text" name="ch2-units" class="units">
+        <br>
+      </div>
+
+      <div class="row info-row">
+        <h2>ORDERING THRESHOLD:</h2>
+        <br>
+        <h3>CH 1: <input type="number" name="ch1-threshold" class="num" min="1"> units remaining</h3>
+        <br>
+        <br>
+        <h3>CH 2: <input type="number" name="ch2-threshold" class="num" min="1"> units remaining</h3>
+      </div>
+
+      <div class="row save-row">
+        <a href="./item-detail.html" class="save-btn fa fa-save"></a>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

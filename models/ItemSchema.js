@@ -8,12 +8,10 @@ const ItemSchema = new Mongoose.Schema({
   UPC: {type: String},
   itemOrModelNum: {type: String},
   prefVendor: {type: String},
-  stockAmountCH1: {type: Number, required: true},
-  stockAmountCH2: {type: Number, required: true},
-  currentAmountCH1: {type: Number},
-  currentAmountCH2: {type: Number},
-  thresholdCH1: {type: Number, required: true},
-  thresholdCH2: {type: Number, required: true},
+  stockAmount: {type: Number, required: true},
+  currentAmount: {type: Number},
+  threshold: {type: Number, required: true},
+  location: {type: String, enum: ["CH1", "CH2"]},
   unitType: {type: String, required: true},
   lastUpdated: {type: Date}
 })
