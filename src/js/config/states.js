@@ -14,12 +14,30 @@
       views:{
         "content":{
           templateUrl: "./templates/browse.html",
-          controller: "browseCtrl"
-
+          controller: "BrowseCtrl",
+          controllerAs: "Browse"
         }
-
       }
-      // controllerAs: "browse"
+    })
+    .state("app.inventory", {
+      url: "/inventory",
+      views:{
+        "content":{
+          templateUrl: "./templates/inventory.html",
+          controller: "InventoryCtrl",
+          controllerAs: "Inventory"
+        }
+      }
+    })
+    .state("app.admin", {
+      url: "/admin",
+      views: {
+        "content": {
+          templateUrl: "./templates/admin.html",
+          controller: "AdminCtrl",
+          controllerAs: "Admin"
+        }
+      }
     })
     $urlRouterProvider.otherwise('/app/browse')
   }

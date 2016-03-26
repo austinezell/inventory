@@ -9,7 +9,6 @@ var http = require('http');
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/landmarks");
 
-
 var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -24,7 +23,8 @@ app.set('port', port);
 
 
 var server = http.createServer(app);
-
+var fileWalker = require('./fileReader');
+fileWalker();
 
 server.listen(port);
 module.exports = app;

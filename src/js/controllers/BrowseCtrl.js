@@ -1,7 +1,7 @@
 (function(){
   angular.module("inventory")
-  .controller("browseCtrl", BrowseCtrl)
+  .controller("BrowseCtrl", BrowseCtrl)
   function BrowseCtrl(){
-    console.log('hi');
+    let vm = this;
   }
 })()

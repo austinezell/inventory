@@ -1,44 +1,18 @@
-<!-- <nav class="page-header">
+<nav class="page-header">
   <h1>Inventory Management
-    <a class="fa fa-navicon right" role="button" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
-  </h1>
-  <div class="collapse" id="collapse">
-    <ion-header-bar class="bar-stable">
-      <h1 class="title">Menu</h1>
-    </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item class="item-california" ng-if="!isLoggedIn" menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item class="item-california" ng-if="isLoggedIn" menu-close ng-click="logout()">
-          Logout
-        </ion-item>
-        <ion-item class="item-california" ng-if="isLoggedIn" menu-close href="#/browse">
-          Profile
-        </ion-item>
-        <ion-item class="item-california" menu-close href="#/app/map">
-          Map
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </div>
-</nav> -->
-<div class="page-header">
-  <h1>Inventory Management
-    <a class="fa fa-navicon right" role="button" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
+      <a class="fa fa-navicon right" role="button" data-toggle="collapse" href="#collapse" aria-expanded="false" aria-controls="collapse"></a>
   </h1>
   <div class="collapse" id="collapse">
     <ul>
       <li><a href="#/app/browsel">BROWSE ITEMS</a></li>
       <hr>
-      <li><a href="./take-inventory.html">TAKE INVENTORY</a></li>
+      <li><a href="#/app/inventory">TAKE INVENTORY</a></li>
       <hr>
-      <li><a href="./admin-dashboard.html">ADMIN DASHBOARD</a></li>
+      <li><a href="#/app/admin">ADMIN DASHBOARD</a></li>
       <hr>
       <li><a href="">SETTINGS</a></li>
     </ul>
   </div>
-</div>
+</nav>
 
 <ion-nav-view name="content"></ion-nav-view>

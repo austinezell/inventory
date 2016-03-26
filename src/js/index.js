@@ -1,7 +1,5 @@
-"use strict";
-// Import module and config
-import "./module.js";
-import "./config/states";
-//import controllers
-
-import "./controllers/BrowseCtrl";
+import "./module.js"
+import "./controllers/AdminCtrl.js"
+import "./controllers/BrowseCtrl.js"
+import "./controllers/InvenCtrl.js"
+import "./config/states.js"
