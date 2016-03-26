@@ -1,0 +1,426 @@
+body {
+  background-color: #FFFAF3;
+  font-family: 'Oxygen', sans-serif;
+  color: #333;
+}
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 56px;
+}
+h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 42px;
+}
+h3 {
+  font-size: 36px;
+  font-weight: bold;
+  display: inline;
+}
+h4 {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+.right {float: right;}
+.left {float: left;}
+.page-header {
+  background-color: #93B0D6;
+  margin-top: -20px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+.page-header > h1 > a.fa-navicon {
+  font-size: 36px;
+  line-height: 70px;
+  margin-left: -76px;
+  margin-right: 45px;
+  color: #333;
+}
+.page-header > h1 > a.fa-navicon:active,
+.page-header > h1 > a.fa-navicon:focus,
+.page-header > h1 > a.fa-navicon:visited {
+  text-decoration: none;
+}
+.page-header ul {
+  list-style-type: none;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 50px;
+  text-align: center;
+}
+.page-header ul li a {
+  color: #333;
+}
+.page-header hr {
+  width: 75%;
+}
+.title-row {
+  padding-top: 50px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #204d74;
+}
+.btn-row {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.btn-primary.big-option {
+  color: #333;
+  background-color: #93B0D6;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  padding: 50px;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: .4px;
+  width: 100%;
+}
+
+.input-row {
+  margin-top: 55px;
+}
+#add-user .input-row label,
+#remove-user .input-row label,
+#remove-item .input-row label,
+#edit-user .input-row label {
+  font-size: 36px;
+}
+#add-user .input-row input[type=text],
+#edit-user .input-row input[type=text] {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  border: none;
+  border-bottom: 1px solid #204d74;
+  background-color: transparent;
+  outline: none;
+}
+#add-user .input-row input:focus,
+#edit-user .input-row input:focus {
+  border-bottom: 4px solid #B7CA79;
+}
+.select {
+  border: 1px solid #333;
+  border-radius:8px;
+  color:#616263;
+  overflow: hidden;
+  height: 75px;
+  width: 50%;
+  position: relative;
+  display: block;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+select {
+  height: 75px;
+  padding: 15px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 24px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.select:after {
+  content:"▼";
+  padding: 12px 8px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+#add-user .add-user-btn,
+#edit-user .save-user-btn {
+  font-size: 36px;
+  color: #333;
+  background-color: #B7CA79;
+  padding: 25px 35px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+}
+#add-user .add-user-btn:active,
+#edit-user .save-user-btn:active {
+  background-color: #204d74;
+  color: #FFFAF3;
+}
+#add-user .cancel-add-btn,
+#edit-user .cancel-edit-btn {
+  font-size: 36px;
+  color: #333;
+  background-color: #CA7979;
+  padding: 25px 35px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+}
+#add-user .cancel-add-btn:active,
+#edit-user .cancel-edit-btn:active,
+#remove-user .trash-btn:active,
+#remove-item .trash-btn:active {
+  background-color: #AB5050;
+}
+#add-user .btns-row,
+#remove-user .btns-row,
+#remove-item .btns-row,
+#edit-user .btns-row {
+  margin-bottom: 50px;
+}
+#remove-user .cancel-remove-btn,
+#remove-item .cancel-remove-btn {
+  font-size: 36px;
+  color: #333;
+  background-color: #93B0D6;
+  padding: 25px 35px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px;
+}
+#remove-user .cancel-remove-btn:active,
+#remove-item .cancel-remove-btn:active {
+  background-color: #6689B7;
+}
+#remove-user .trash-row,
+#remove-item .trash-row {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+#remove-user a.trash-btn,
+#remove-item a.trash-btn {
+  color: #333;
+  font-size: 56px;
+  background-color: #CA7979;
+  padding: 50px;
+  width: 100%;
+  border-radius: 8px;
+}
+#remove-item .panel {
+  padding: 25px;
+  border: 1px solid #333;
+}
+#remove-item .panel-body {
+  text-align: center;
+}
+#remove-item .panel-body h2 {
+  margin-top: 0;
+}
+#remove-item .panel-body span {
+  font-size: 24px;
+}
+
+#browse-items .add-row,
+#item-detail .edit-row,
+#edit-item .save-row {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: right;
+}
+#browse-items .add-item-btn {
+  font-size: 36px;
+  color: #FFFAF3;
+  background-color: #204d74;
+  padding: 25px;
+  width: 100px;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+#browse-items .panel-group .panel-heading {
+  background-color: #93B0D6;
+  height: 100px;
+  line-height: 105px
+}
+#browse-items .panel-group .panel-title a {
+  font-size: 48px;
+  font-weight: bold;
+}
+#browse-items .list-group li {
+  font-size: 36px;
+}
+#browse-items .list-group li a {
+  color: #204d74;
+}
+#browse-items .list-group-item {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#item-detail .edit-btn,
+#edit-item .save-btn {
+  text-align: center;
+  font-size: 36px;
+  color: #FFFAF3;
+  padding: 25px;
+  background-color: #204d74;
+  width: 100px;
+  border-radius: 8px;
+}
+#item-detail .info-row,
+#edit-item .info-row,
+#take-inventory .input-row {
+  margin-bottom: 25px;
+}
+#item-detail .info-row h2,
+#edit-item .info-row h2 {
+  text-align: left;
+  margin-bottom: 15px;
+}
+#item-detail .info-row h3 {
+  color: #204d74;
+  margin-left: 25px;
+}
+#item-detail .info-row p {
+  color: #204d74;
+  margin-left: 25px;
+  font-size: 24px;
+}
+#item-detail .picture-row,
+#edit-item .picture-row {
+  margin-left: 25px;
+}
+#item-detail .picture-row img,
+#edit-item .picture-row img {
+  margin-right: 25px;
+}
+#edit-item .info-row input,
+#take-inventory .input-row input {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  border: none;
+  border-bottom: 1px solid #204d74;
+  background-color: transparent;
+  outline: none;
+}
+#edit-item .info-row input:focus,
+#take-inventory .input-row input:focus {
+  border-bottom: 4px solid #B7CA79;
+}
+#edit-item .info-row textarea {
+  width: 100%;
+  height: 100%;
+  font-size: 36px;
+  border: none;
+  border-bottom: 1px solid #204d74;
+  background-color: transparent;
+  outline: none;
+}
+#edit-item .info-row textarea:focus {
+  border-bottom: 4px solid #B7CA79;
+}
+#edit-item .info-row label {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+#edit-item .info-row input.num,
+#edit-item .info-row input.units {
+  width: 25%;
+  text-align: center;
+}
+#edit-item .info-row h3 {
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+#edit-item .info-row .new-pic {
+  width: 175px;
+  height: 175px;
+  border: 2px solid #333;
+  text-align: center;
+  margin-right: 25px;
+  line-height: 153px;
+}
+#add-item .select,
+#edit-item .select {
+  border: 1px solid #333;
+  border-radius:8px;
+  color:#616263;
+  overflow: hidden;
+  height: 75px;
+  width: 50%;
+  position: relative;
+  display: block;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+#add-item select,
+#edit-item select {
+  height: 75px;
+  padding: 15px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+  font-size: 24px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#add-item .select:after,
+#edit-item .select:after {
+  content:"▼";
+  padding: 12px 8px;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+#edit-item .input-row label,
+#add-item .input-row label,
+#take-inventory .input-row label {
+  font-size: 42px;
+}
+
+#take-inventory .fa-search {
+  margin-right: 25px;
+}
+#take-inventory #search {
+  width: 90%;
+}
+#take-inventory .select {
+  width: 100%;
+}
+#take-inventory .item-row .panel {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+#take-inventory .item-row input {
+  width: 25%;
+  height: 100%;
+  font-size: 36px;
+  border: none;
+  border-bottom: 1px solid #204d74;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+}
+#take-inventory .item-row input:focus {
+  border-bottom: 4px solid #B7CA79;
+}
+#take-inventory .item-row h2 {
+  margin-bottom: 20px;
+}
+#take-inventory .item-row span {
+  font-size: 42px;
+  font-weight: bold;
+}

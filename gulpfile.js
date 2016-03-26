@@ -7,9 +7,7 @@ var clean = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var prefixer = require('gulp-autoprefixer');
-var babel =  require('gulp-babel');
 var minify = require('gulp-minify');
-var concat = require('gulp-concat');
 var webpack = require('webpack');
 
 var paths = {
@@ -45,21 +43,6 @@ gulp.task("javascript", function(done) {
     .on('end', done)
   });
 });
-
-// gulp.task("javascript", function(done){
-//   return gulp.src(paths.src.js)
-//   .pipe(babel({
-//     presets: ['es2015']
-//   }))
-//   .pipe(concat('bundle.js'))
-//   .pipe(minify({
-//     ext:{
-//       src:'.js',
-//       min:'.min.js'
-//     }
-//   }))
-//   .pipe(gulp.dest(paths.dest.js))
-// })
 
 
 gulp.task('sass', function(done) {
