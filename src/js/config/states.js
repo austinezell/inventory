@@ -29,6 +29,16 @@
         }
       }
     })
+    .state("app.addItem", {
+      url: "/addItem",
+      views:{
+        "content":{
+          templateUrl: "./templates/addItem.html",
+          controller: "ItemCtrl",
+          controllerAs: "Item"
+        }
+      }
+    })
     .state("app.admin", {
       url: "/admin",
       views: {
