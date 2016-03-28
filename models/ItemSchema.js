@@ -5,13 +5,13 @@ const ItemSchema = new Mongoose.Schema({
   description: {type: String},
   department: {type: String, required: true, enum: ["household", "foodstuffs", "office"]},
   keywords: [{type: String}],
-  UPC: {type: String},
+  UPC: {type: Number},
   itemOrModelNum: {type: String},
   prefVendor: {type: String},
-  stockAmount: {type: Number, required: true},
-  currentAmount: {type: Number},
-  threshold: {type: Number, required: true},
-  location: {type: String, enum: ["CH1", "CH2"]},
+  stockAmount: {type: Object, default: {CH1: 0, CH2: 0}},
+  currentAmount: {type: Object, default: {CH1: 0, CH2: 0}},
+  threshold: {type: Object, default: {CH1: 0, CH2: 0}},
+  location: {type: String, enum: ["CH1", "CH2", "CH1+CH2"]},
   unitType: {type: String, required: true},
   lastUpdated: {type: Date}
 })

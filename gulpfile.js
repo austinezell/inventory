@@ -1,16 +1,18 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var bower = require('bower');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var clean = require('gulp-clean-css');
-var rename = require('gulp-rename');
-var sh = require('shelljs');
-var prefixer = require('gulp-autoprefixer');
-var minify = require('gulp-minify');
-var webpack = require('webpack');
+"use strict"
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const bower = require('bower');
+const concat = require('gulp-concat');
+const sass = require('gulp-sass');
+const clean = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const sh = require('shelljs');
+const prefixer = require('gulp-autoprefixer');
+const minify = require('gulp-minify');
+const webpack = require('webpack');
+const nodemon = require('gulp-nodemon')
 
-var paths = {
+const paths = {
   src: {
     sass: './src/scss/**/*.scss',
     javascript: './src/js/**/*.js',
@@ -25,7 +27,7 @@ var paths = {
   }
 };
 
-gulp.task('default', ['sass', 'javascript', 'templates', 'assets',  'watch']);
+gulp.task('default', ['sass', 'javascript', 'templates', 'assets', 'watch', 'start']);
 gulp.task('dev', ['sass', 'javascript', 'templates', 'assets']);
 
 gulp.task("javascript", function(done) {
@@ -70,6 +72,10 @@ gulp.task('assets', function(done){
   gulp.src(paths.src.assets)
   .pipe(gulp.dest(paths.dest.assets))
   .on('end', done);
+})
+
+gulp.task('start', function(){
+  nodemon()
 })
 
 gulp.task('watch', function() {
