@@ -9,7 +9,7 @@ module.exports = function() {
 
   walker.on("file", function(root, stat, next){
     if(stat.name !== "index.js"){
-      let name = `import "${root}/${stat.name}"`;
+      let name = `import "${root}/${stat.name}";`;
       name = name.replace("/src/js", "");
       files.push(name);
     }

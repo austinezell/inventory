@@ -8,9 +8,6 @@
     let vm = this;
     vm.newItem = {};
 
-    $scope.$watch(
-      'vm.*'
-    )
   }
 
 })()
