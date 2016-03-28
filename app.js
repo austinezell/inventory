@@ -7,7 +7,7 @@ var fs = require('fs');
 var http = require('http');
 
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/landmarks");
+mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/inventory");
 
 var app = express();
 app.use(logger('dev'));
