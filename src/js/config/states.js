@@ -49,6 +49,16 @@
         }
       }
     })
+    .state("app.invenLog", {
+      url: "/invenLog",
+      views: {
+        "content": {
+          templateUrl: "./templates/invenLog.html",
+          controller: "InvenLogCtrl",
+          controllerAs: "InvenLog"
+        }
+      }
+    })
     $urlRouterProvider.otherwise('/app/browse')
   }
 

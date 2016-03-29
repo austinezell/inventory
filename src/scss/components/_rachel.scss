@@ -472,3 +472,15 @@ select {
   margin-top: 15px;
   margin-bottom: 10px;
 }
+
+#inventory-log .subtitle-row {
+  border-bottom: 3px solid #204d74;
+  text-align: center;
+  padding-bottom: 15px;
+}
+#inventory-log .select-row {
+  margin-top: 0;
+}
+#inventory-log .panel .panel-body .date {
+  margin-bottom: 25px;
+}
