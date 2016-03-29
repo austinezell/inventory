@@ -486,7 +486,8 @@ select {
 #inventory-log .panel .panel-body .date,
 #inventory-log .panel .panel-body .update,
 #ordering-log .panel .panel-body .date,
-#ordering-log .panel .panel-body .request {
+#ordering-log .panel .panel-body .request,
+#ordering-log .panel .panel-body .order-date {
   margin-bottom: 10px;
 }
 
