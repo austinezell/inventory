@@ -13,7 +13,7 @@
       .then(res=>{
         vm.inventory.CH1 = res.data.CH1;
         vm.inventory.CH2 = res.data.CH2;
-
+        
       })
     }
 
