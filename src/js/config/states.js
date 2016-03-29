@@ -59,6 +59,16 @@
         }
       }
     })
+    .state("app.orderLog", {
+      url: "/orderLog",
+      views: {
+        "content": {
+          templateUrl: "./templates/orderLog.html",
+          controller: "OrderLogCtrl",
+          controllerAs: "OrderLog"
+        }
+      }
+    })
     $urlRouterProvider.otherwise('/app/browse')
   }
 

@@ -473,15 +473,27 @@ select {
   margin-bottom: 10px;
 }
 
-#inventory-log .subtitle-row {
+#inventory-log .subtitle-row,
+#ordering-log .subtitle-row {
   border-bottom: 3px solid #204d74;
   text-align: center;
   padding-bottom: 15px;
 }
-#inventory-log .select-row {
+#inventory-log .select-row,
+#ordering-log .select-row {
   margin-top: 0;
 }
 #inventory-log .panel .panel-body .date,
-#inventory-log .panel .panel-body .update {
+#inventory-log .panel .panel-body .update,
+#ordering-log .panel .panel-body .date,
+#ordering-log .panel .panel-body .request {
   margin-bottom: 10px;
+}
+
+#ordering-log .incomplete-panel {
+  border: 8px solid brown;
+  border-style: double;
+}
+#ordering-log .incomplete {
+  color: brown;
 }
