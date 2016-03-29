@@ -5,6 +5,7 @@
   BrowseCtrl.$inject =["InventoryService"];
   function BrowseCtrl(InventoryService){
     let vm = this;
+    vm.inventory = {};
     getAll();
 
     function getAll(){

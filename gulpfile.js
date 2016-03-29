@@ -75,7 +75,7 @@ gulp.task('assets', function(done){
 })
 
 gulp.task('start', function(){
-  nodemon()
+  return nodemon()
 })
 
 gulp.task('watch', function() {

@@ -39,16 +39,6 @@
         }
       }
     })
-    .state("app.admin", {
-      url: "/admin",
-      views: {
-        "content": {
-          templateUrl: "./templates/admin.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
-        }
-      }
-    })
     $urlRouterProvider.otherwise('/app/browse')
   }
 
