@@ -23,6 +23,11 @@ h4 {
   font-weight: bold;
   display: inline;
 }
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .caps {text-transform: uppercase;}
 .right {float: right;}
 .left {float: left;}
@@ -243,6 +248,7 @@ select {
 #edit-item .save-row {
   margin-top: 25px;
   margin-bottom: 25px;
+  margin-left: 25px;
   text-align: right;
 }
 #browse-items .add-item-btn {
@@ -280,12 +286,13 @@ select {
 #item-detail .edit-btn,
 #edit-item .save-btn {
   text-align: center;
-  font-size: 36px;
+  font-size: 18px;
   color: #FFFAF3;
-  padding: 25px;
+  padding: 17px;
   background-color: #204d74;
-  width: 100px;
-  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
 }
 #item-detail .info-row,
 #edit-item .info-row,
@@ -308,11 +315,11 @@ select {
 }
 #item-detail .picture-row,
 #edit-item .picture-row {
-  margin-left: 25px;
+  margin-left: 0px;
 }
 #item-detail .picture-row img,
 #edit-item .picture-row img {
-  margin-right: 25px;
+  margin-right: 10px;
 }
 #edit-item .info-row input,
 #take-inventory .input-row input {
@@ -331,12 +338,13 @@ select {
 }
 #edit-item .info-row textarea {
   width: 100%;
-  height: 100%;
-  font-size: 36px;
+  height: 100px;
+  font-size: 18px;
   border: none;
   border-bottom: 1px solid #204d74;
   background-color: transparent;
   outline: none;
+  resize: none;
 }
 #edit-item .info-row textarea:focus {
   border-bottom: 4px solid #B7CA79;
@@ -344,13 +352,13 @@ select {
 #edit-item .info-row label {
   font-size: 24px;
   font-weight: bold;
-  margin-right: 25px;
+  margin-right: 10px;
   margin-left: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 #edit-item .info-row input.num,
 #edit-item .info-row input.units {
-  width: 25%;
+  width: 15%;
   text-align: center;
 }
 #edit-item .info-row h3 {
@@ -358,12 +366,12 @@ select {
   margin-left: 25px;
 }
 #edit-item .info-row .new-pic {
-  width: 175px;
-  height: 175px;
+  width: 75px;
+  height: 75px;
   border: 2px solid #333;
   text-align: center;
-  margin-right: 25px;
-  line-height: 153px;
+  margin-right: 10px;
+  line-height: 60px;
 }
 #add-item .select,
 #edit-item .select {
@@ -371,7 +379,7 @@ select {
   border-radius:8px;
   color:#616263;
   overflow: hidden;
-  height: 75px;
+  height: 35px;
   width: 50%;
   position: relative;
   display: block;
@@ -380,13 +388,13 @@ select {
 }
 #add-item select,
 #edit-item select {
-  height: 75px;
-  padding: 15px;
+  height: 35px;
+  padding: 5px;
   background-color: transparent;
   border: 0;
   border-radius: 8px;
   outline: none;
-  font-size: 24px;
+  font-size: 14px;
   width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -398,7 +406,7 @@ select {
   padding: 12px 8px;
   position: absolute;
   right: 10px;
-  top: 15px;
+  top: -3px;
   z-index: 1;
   text-align: center;
   width: 10%;
@@ -453,11 +461,6 @@ select {
 }
 #take-inventory .bottom-input-row {
   margin-bottom: 50px;
-}
-#take-inventory input[type=number]::-webkit-outer-spin-button,
-#take-inventory input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 #take-inventory .panel-body a.fa-check {
   background-color: #93B0D6;

@@ -2,7 +2,7 @@
   <ion-content>
     <div class="container" id="edit-item">
 
-      <div class="row title-row">
+      <div class="title-row">
         <h1>ADD ITEM</h1>
       </div>
       <form ng-submit="Item.save(Item.newItem)">
@@ -11,26 +11,27 @@
         <a class="save-btn fa fa-save" ng-click="Item.save(Item.newItem)"></a>
       </div> -->
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>TITLE:</h2>
         <input required type="text" ng-model="Item.newItem.title">
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>PICTURES:</h2>
         <div class="picture-row">
           <a href="" class="new-pic btn fa fa-camera"></a>
-          <img src="http://placehold.it/175" alt="">
-          <img src="http://placehold.it/175" alt="">
+          <img src="http://placehold.it/50" alt="">
+          <img src="http://placehold.it/50" alt="">
+          <img src="http://placehold.it/50" alt="">
         </div>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>Description:</h2>
         <textarea name="" id="" cols="30" rows="4"></textarea>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
@@ -42,7 +43,7 @@
         </div>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
@@ -54,46 +55,47 @@
         </div>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>KEYWORDS:</h2>
         <input ng-model="Item.newItem.keywords" type="text">
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>UPC CODE:</h2>
         <input ng-model="Item.newItem.UPC" type="number">
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>ITEM # / MODEL #:</h2>
         <input ng-model="Item.newItem.itemOrModelNum" type="string">
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>PREFERRED VENDOR:</h2>
         <input ng-model="Item.newItem.prefVendor" type="text">
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>AMOUNT TO STOCK:</h2>
         <h3>CH 1:</h3>
         <br>
         <label for="ch1-num">Amount:</label>
         <input ng-model="Item.newItem.stockAmount" type="number" name="ch1-num" class="num" min="1">
         <br>
-        <label for="ch1-units">Units (e.g. rolls/boxes):</label>
+        <label for="ch1-units">Units (e.g. boxes):</label>
         <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units">
         <br>
         <h3>CH 2:</h3>
         <br>
         <label for="ch2-num">Amount:</label>
         <input type="number" name="ch2-num" class="num" min="1">
+        <br>
         <label for="ch2-units">Units:</label>
         <input type="text" name="ch2-units" class="units">
         <br>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>ORDERING THRESHOLD:</h2>
         <br>
         <h3>CH 1: <input type="number" name="ch1-threshold" class="num" min="1"> units remaining</h3>
