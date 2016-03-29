@@ -6,25 +6,29 @@ body {
 h1 {
   text-align: center;
   font-weight: bold;
-  font-size: 56px;
+  font-size: 36px;
 }
 h2 {
   text-align: center;
   font-weight: bold;
-  font-size: 42px;
+  font-size: 27px;
 }
 h3 {
-  font-size: 36px;
+  font-size: 22px;
   font-weight: bold;
   display: inline;
 }
 h4 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   display: inline;
 }
+.caps {text-transform: uppercase;}
 .right {float: right;}
 .left {float: left;}
+.bar.bar-header {
+  background-color: #93B0D6;
+}
 .page-header {
   background-color: #93B0D6;
   margin-top: -20px;
@@ -43,6 +47,17 @@ h4 {
 .page-header > h1 > a.fa-navicon:visited {
   text-decoration: none;
 }
+.scroll-content .scroll ul {
+  margin-top: 20px;
+}
+.scroll-content .scroll ul li {
+  line-height: 18px;
+  padding-left: 15px;
+}
+.scroll-content .scroll ul li a {
+  color: #333;
+  font-size: 16px;
+}
 .page-header ul {
   list-style-type: none;
   font-size: 36px;
@@ -57,7 +72,7 @@ h4 {
   width: 75%;
 }
 .title-row {
-  padding-top: 50px;
+  padding-top: 25px;
   padding-bottom: 15px;
   margin-bottom: 15px;
   border-bottom: 3px solid #204d74;
@@ -81,7 +96,8 @@ h4 {
 }
 
 .input-row {
-  margin-top: 55px;
+  margin-top: 35px;
+  margin-bottom: 15px;
 }
 #add-user .input-row label,
 #remove-user .input-row label,
@@ -108,7 +124,7 @@ h4 {
   border-radius:8px;
   color:#616263;
   overflow: hidden;
-  height: 75px;
+  height: 45px;
   width: 50%;
   position: relative;
   display: block;
@@ -116,24 +132,25 @@ h4 {
   margin-top: 25px;
 }
 select {
-  height: 75px;
-  padding: 15px;
+  height: 45px;
+  padding: 10px;
   background-color: transparent;
   border: 0;
   border-radius: 8px;
   outline: none;
-  font-size: 24px;
+  font-size: 14px;
   width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  line-height: 11px;
 }
 .select:after {
   content:"▼";
   padding: 12px 8px;
   position: absolute;
-  right: 10px;
-  top: 15px;
+  right: 15px;
+  top: 1px;
   z-index: 1;
   text-align: center;
   width: 10%;
@@ -229,21 +246,21 @@ select {
   text-align: right;
 }
 #browse-items .add-item-btn {
-  font-size: 36px;
+  font-size: 18px;
   color: #FFFAF3;
   background-color: #204d74;
-  padding: 25px;
-  width: 100px;
+  padding: 10px;
+  width: 50px;
   margin-right: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 #browse-items .panel-group .panel-heading {
   background-color: #93B0D6;
-  height: 100px;
-  line-height: 105px
+  height: 75px;
+  line-height: 65px
 }
 #browse-items .panel-group .panel-title a {
-  font-size: 48px;
+  font-size: 24px;
   font-weight: bold;
 }
 #browse-items .list-group li {
@@ -255,6 +272,9 @@ select {
 #browse-items .list-group-item {
   padding-top: 25px;
   padding-bottom: 25px;
+}
+#browse-items .panel-group .panel-heading+.panel-collapse>.list-group {
+  margin-top: 0;
 }
 
 #item-detail .edit-btn,
@@ -296,13 +316,14 @@ select {
 }
 #edit-item .info-row input,
 #take-inventory .input-row input {
-  width: 100%;
+  width: 75%;
   height: 100%;
-  font-size: 36px;
+  font-size: 18px;
   border: none;
   border-bottom: 1px solid #204d74;
   background-color: transparent;
   outline: none;
+  display: inline-block;
 }
 #edit-item .info-row input:focus,
 #take-inventory .input-row input:focus {
@@ -388,11 +409,11 @@ select {
 #edit-item .input-row label,
 #add-item .input-row label,
 #take-inventory .input-row label {
-  font-size: 42px;
+  font-size: 21px;
 }
 
 #take-inventory .fa-search {
-  margin-right: 25px;
+  margin-right: 10px;
 }
 #take-inventory #search {
   width: 90%;
@@ -407,20 +428,47 @@ select {
 #take-inventory .item-row input {
   width: 25%;
   height: 100%;
-  font-size: 36px;
+  font-size: 14px;
   border: none;
   border-bottom: 1px solid #204d74;
   background-color: transparent;
   text-align: center;
   outline: none;
+  display: inline-block;
 }
 #take-inventory .item-row input:focus {
   border-bottom: 4px solid #B7CA79;
+}
+#take-inventory input[type=number] {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: -8px;
 }
 #take-inventory .item-row h2 {
   margin-bottom: 20px;
 }
 #take-inventory .item-row span {
-  font-size: 42px;
+  font-size: 21px;
   font-weight: bold;
+}
+#take-inventory .bottom-input-row {
+  margin-bottom: 50px;
+}
+#take-inventory input[type=number]::-webkit-outer-spin-button,
+#take-inventory input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#take-inventory .panel-body a.fa-check {
+  background-color: #93B0D6;
+  color: #333;
+  float: right;
+}
+#take-inventory .panel-body .more-info-btn {
+  background-color: #93B0D6;
+  color: #333;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
