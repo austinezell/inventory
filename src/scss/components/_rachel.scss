@@ -481,6 +481,7 @@ select {
 #inventory-log .select-row {
   margin-top: 0;
 }
-#inventory-log .panel .panel-body .date {
-  margin-bottom: 25px;
+#inventory-log .panel .panel-body .date,
+#inventory-log .panel .panel-body .update {
+  margin-bottom: 10px;
 }
