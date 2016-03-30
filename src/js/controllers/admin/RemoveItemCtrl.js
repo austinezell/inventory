@@ -7,9 +7,9 @@
     let vm = this;
     vm.filter ={};
     vm.item = {};
-    getAll()
+    getInventory()
 
-    function getAll(){
+    function getInventory(){
       InventoryService.getAltogether()
       .then(res=>{
         vm.inventory = res.data;

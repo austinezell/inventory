@@ -9,5 +9,8 @@
     this.getAll = () => $http.get('/users/all');
 
     this.removeUser = (id) => $http.delete(`/users/${id}`);
+
+    this.update = (user) => $http.put("/users/", user);
+
   }
 })()

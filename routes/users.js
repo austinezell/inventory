@@ -19,4 +19,10 @@ router.delete("/:id", (req, res)=>{
   })
 })
 
+router.put("/", (req, res)=>{
+  User.findByIdAndUpdate(req.body._id, req.body, err=>{
+    err ? res.status(499).send(err) : res.send("User updated!")
+  })
+})
+
 module.exports = router;

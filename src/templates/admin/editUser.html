@@ -4,38 +4,51 @@
       <div class="row title-row">
         <h1>EDIT USER</h1>
       </div>
-
       <div class="row input-row">
         <label for="user">USER:</label>
         <br>
         <div class="select">
-          <select name="user" id="user">
-          </select>
-        </div>
+          <select
+          ng-model="Admin.selected"
+          name="user"
+          ng-options="user as user.name for user in Admin.users"
+          id="user">
+        </select>
       </div>
+    </div>
+    <form ng-submit="Admin.updateUser(Admin.selected)">
 
       <div class="row input-row">
         <label for="title">NAME:</label>
         <br>
-        <input type="text">
+        <input ng-model="Admin.selected.name" type="text">
       </div>
 
       <div class="row input-row">
         <label for="title">EMAIL:</label>
         <br>
-        <input type="text">
+        <input
+        ng-model="Admin.selected.email"
+        ng-pattern="Admin.emailRegEx"
+        type="text">
       </div>
 
       <div class="row input-row">
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
-          <select name="department" id="department">
+          <select ng-model="Admin.selected.department" name="department" id="department">
             <option value="maintenance">MAINTENANCE</option>
-            <option value="food-service">FOOD SERVICE</option>
+            <option value="foodService">FOOD SERVICE</option>
+            <option value="other">OTHER</option>
           </select>
         </div>
       </div>
+      <div class="row save-row">
+        <a href ng-click="Admin.save(Admin.selected)" class="save-btn fa fa-save"></a>
+      </div>
+
+    </form>
 
   </ion-content>
 </ion-view>

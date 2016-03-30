@@ -7,8 +7,9 @@
   function RemoveUserCtrl(UserService, $ionicPopup){
     let vm = this;
     vm.users =[];
-    getAll()
-    function getAll(){
+    getUsers();
+
+    function getUsers(){
       UserService.getAll()
       .then(
         res => vm.users = res.data,
