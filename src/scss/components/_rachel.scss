@@ -84,7 +84,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .btn-row {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 .btn-primary.big-option {
   color: #333;
@@ -417,7 +417,7 @@ select {
 #edit-item .input-row label,
 #add-item .input-row label,
 #take-inventory .input-row label {
-  font-size: 21px;
+  font-size: 18px;
 }
 
 #take-inventory .fa-search {
@@ -500,4 +500,9 @@ select {
 }
 #ordering-log .incomplete {
   color: brown;
+}
+
+#admin-dashboard .big-option {
+  font-size: 18px;
+  margin-bottom: 15px;
 }
