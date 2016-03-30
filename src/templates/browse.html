@@ -7,14 +7,14 @@
       </div>
 
       <div class="row add-row">
-        <a href="#/app/addItem" class="btn btn-lg fa fa-plus add-item-btn"></a>
+        <a data-target="#/app/addItem" class="btn btn-lg fa fa-plus add-item-btn"></a>
       </div>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <!-- CH 1  -->
         <div ng-repeat="(location, inventory) in Browse.inventory track by $index" class="panel panel-default">
           <div class="panel-heading" role="tab">
             <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="{{'#'+location+'collapse'}}" aria-expanded="false" aria-controls="{{location+'collapse'}}">
+              <a role="button" data-toggle="collapse" data-parent="#accordion" data-target="{{'#'+location+'collapse'}}" aria-expanded="false" aria-controls="{{location+'collapse'}}">
                 {{location}}
               </a>
             </h4>
@@ -27,7 +27,7 @@
                   <a role="button"
                   data-toggle="collapse"
                   data-parent="{{'#'+location+'collapse'}}"
-                  href="{{'#'+location+department.filter+'collapse'}}"
+                  data-target="{{'#'+location+department.filter+'collapse'}}"
                   aria-expanded="false"
                   aria-controls="{{location+department.filter+'collapse'}}">
                       {{department.name}}
