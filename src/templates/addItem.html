@@ -20,9 +20,8 @@
         <h2>PICTURES:</h2>
         <div class="picture-row">
           <a href="" class="new-pic btn fa fa-camera"></a>
-          <img src="http://placehold.it/50" alt="">
-          <img src="http://placehold.it/50" alt="">
-          <img src="http://placehold.it/50" alt="">
+          <!-- <img src="http://placehold.it/175" alt="">
+          <img src="http://placehold.it/175" alt=""> -->
         </div>
       </div>
 
@@ -31,7 +30,7 @@
         <textarea name="" id="" cols="30" rows="4"></textarea>
       </div>
 
-      <div class="input-row">
+      <div class="row input-row">
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
@@ -43,11 +42,11 @@
         </div>
       </div>
 
-      <div class="input-row">
+      <div class="row input-row">
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
-          <select ng-model="Item.newItem.department" name="department" id="department">
+          <select required ng-model="Item.newItem.department" name="department" id="department">
             <option value="household">HOUSEHOLD</option>
             <option value="foodstuffs">FOOD SERVICE</option>
             <option value="office">OFFICE</option>
@@ -80,28 +79,27 @@
         <h3>CH 1:</h3>
         <br>
         <label for="ch1-num">Amount:</label>
-        <input ng-model="Item.newItem.stockAmount" type="number" name="ch1-num" class="num" min="1">
+        <input ng-model="Item.newItem.stockAmount.CH1" type="number" name="ch1-num" class="num" min="1">
         <br>
-        <label for="ch1-units">Units (e.g. boxes):</label>
-        <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units">
+        <!-- <label for="ch1-units">Units (e.g. rolls/boxes):</label> -->
+        <!-- <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units"> -->
         <br>
         <h3>CH 2:</h3>
         <br>
         <label for="ch2-num">Amount:</label>
-        <input type="number" name="ch2-num" class="num" min="1">
-        <br>
+        <input ng-model="Item.newItem.stockAmount.CH2" type="number" name="ch2-num" class="num" min="1">
         <label for="ch2-units">Units:</label>
-        <input type="text" name="ch2-units" class="units">
+        <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units">
         <br>
       </div>
 
       <div class="info-row">
         <h2>ORDERING THRESHOLD:</h2>
         <br>
-        <h3>CH 1: <input type="number" name="ch1-threshold" class="num" min="1"> units remaining</h3>
+        <h3>CH 1: <input required type="number" ng-model="Item.newItem.threshold.CH1" name="ch1-threshold" class="num" min="0"> units remaining</h3>
         <br>
         <br>
-        <h3>CH 2: <input type="number" name="ch2-threshold" class="num" min="1"> units remaining</h3>
+        <h3>CH 2: <input required type="number" ng-model="Item.newItem.threshold.CH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
       </div>
 
       <div class="row save-row">

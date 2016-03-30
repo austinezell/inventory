@@ -39,36 +39,6 @@
         }
       }
     })
-    .state("app.admin", {
-      url: "/admin",
-      views: {
-        "content": {
-          templateUrl: "./templates/admin.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
-        }
-      }
-    })
-    .state("app.invenLog", {
-      url: "/invenLog",
-      views: {
-        "content": {
-          templateUrl: "./templates/invenLog.html",
-          controller: "InvenLogCtrl",
-          controllerAs: "InvenLog"
-        }
-      }
-    })
-    .state("app.orderLog", {
-      url: "/orderLog",
-      views: {
-        "content": {
-          templateUrl: "./templates/orderLog.html",
-          controller: "OrderLogCtrl",
-          controllerAs: "OrderLog"
-        }
-      }
-    })
     $urlRouterProvider.otherwise('/app/browse')
   }
 

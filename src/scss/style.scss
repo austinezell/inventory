@@ -1,1 +1,10 @@
 @import "./components/_rachel";
+
+
+.panel-title, .panel-heading {
+  a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+}

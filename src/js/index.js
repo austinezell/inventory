@@ -5,5 +5,5 @@ import "./controllers/BrowseCtrl.js";
 import "./controllers/InvenCtrl.js";
 import "./controllers/InvenLogCtrl.js";
 import "./controllers/ItemCtrl.js";
-import "./controllers/OrderLogCtrl.js";
+import "./config/adminStates.js";
 import "./config/states.js";
