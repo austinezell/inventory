@@ -9,10 +9,10 @@
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
-          <select name="location" id="location">
-            <option value="ch1">CH 1</option>
-            <option value="ch2">CH 2</option>
-            <option value="ch1-ch2">CH 1 + CH 2</option>
+          <select ng-model="Admin.filter.location" name="location" id="location">
+            <option value="CH1">CH 1</option>
+            <option value="CH2">CH 2</option>
+            <option value="CH1+CH2">CH 1 + CH 2</option>
           </select>
         </div>
       </div>
@@ -21,7 +21,7 @@
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
-          <select name="department" id="department">
+          <select ng-model="Admin.filter.department" name="department" id="department">
             <option value="food-service">FOOD SERVICE</option>
             <option value="maintenance">MAINTENANCE</option>
             <option value="office">OFFICE</option>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="row input-row btns-row">
-        <a href="./admin-dashboard.html" class="btn btn-primary fa fa-close cancel-remove-btn"></a>
+        <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-remove-btn"></a>
       </div>
 
     </div>

@@ -10,9 +10,7 @@
       url: "/admin",
       views: {
         "content": {
-          templateUrl: "./templates/admin/admin.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
+          templateUrl: "./templates/admin/admin.html"
         }
       }
     })
@@ -20,7 +18,9 @@
       url: "/addUser",
       views:{
         "content@app":{
-          templateUrl: "./templates/admin/addUser.html"
+          templateUrl: "./templates/admin/addUser.html",
+          controller: "AdminCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -28,7 +28,9 @@
       url: "/editUser",
       views:{
         "content@app":{
-          templateUrl: "./templates/admin/editUser.html"
+          templateUrl: "./templates/admin/editUser.html",
+          controller: "AdminCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -36,7 +38,9 @@
       url: "/removeUser",
       views:{
         "content@app":{
-          templateUrl: "./templates/admin/removeUser.html"
+          templateUrl: "./templates/admin/removeUser.html",
+          controller: "AdminCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -44,7 +48,9 @@
       url: "/removeItem",
       views:{
         "content@app":{
-          templateUrl: "./templates/admin/removeItem.html"
+          templateUrl: "./templates/admin/removeItem.html",
+          controller: "AdminCtrl",
+          controllerAs: "Admin"
         }
       }
     })

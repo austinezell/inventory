@@ -4,33 +4,35 @@
       <div class="row title-row">
         <h1>ADD USER</h1>
       </div>
+      <form ng-submit="Admin.addUser(Admin.newUser)">
 
-      <div class="row input-row">
-        <label for="title">NAME:</label>
-        <br>
-        <input type="text">
-      </div>
-
-      <div class="row input-row">
-        <label for="title">EMAIL:</label>
-        <br>
-        <input type="text">
-      </div>
-
-      <div class="row input-row">
-        <label for="department">DEPARTMENT:</label>
-        <br>
-        <div class="select">
-          <select name="department" id="department">
-            <option value="maintenance">MAINTENANCE</option>
-            <option value="food-service">FOOD SERVICE</option>
-          </select>
+        <div class="row input-row">
+          <label for="title">NAME:</label>
+          <br>
+          <input required type="text" ng-model="Admin.newUser.name" ng-class="{invalid: }">
         </div>
-      </div>
 
-      <div class="row input-row btns-row">
-        <a href="" class="btn btn-primary fa fa-envelope add-user-btn"></a>
-        <a href="./admin-dashboard.html" class="btn btn-primary fa fa-close cancel-add-btn"></a>
+        <div class="row input-row">
+          <label for="title">EMAIL:</label>
+          <br>
+          <input required type="text" ng-model="Admin.newUser.email" ng-class="{invalid: Admin.invalid.email}">
+        </div>
+
+        <div class="row input-row">
+          <label for="department">DEPARTMENT:</label>
+          <br>
+          <div class="select">
+            <select name="department" id="department" ng-model="Admin.newUser.department">
+              <option value="maintenance">MAINTENANCE</option>
+              <option value="foodservice">FOOD SERVICE</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row input-row btns-row">
+          <button type="submit" ng-click="" class="btn btn-primary fa fa-envelope add-user-btn"></button>
+        </form>
+        <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-add-btn"></a>
       </div>
 
     </div>
