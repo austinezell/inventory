@@ -51,7 +51,6 @@
       <div class="panel-body" ng-show="Admin.item._id">
         <h2>{{Admin.item.title | uppercase}}</h2>
         <span>{{Admin.item.department | uppercase}} |</span>
-        <span> THINGS |</span>
         <span>{{Admin.item.location | uppercase}}</span>
       </div>
       <div class="panel-body" ng-hide="Admin.item._id">
@@ -60,7 +59,7 @@
     </div>
 
     <div class="row trash-row">
-      <a href="" ng-disabled="!Admin.item._id" ng-click="Admin.confirmDelete(Admin.item)" class="btn btn-lg trash-btn fa fa-trash"></a>
+      <button href="" ng-disabled="!Admin.item._id" ng-click="Admin.confirmDelete(Admin.item)" class="btn btn-lg trash-btn fa fa-trash"></button>
     </div>
 
     <div class="row input-row btns-row">

@@ -11,6 +11,13 @@ router.post("/add", (req, res)=>{
   })
 })
 
+router.put("/", (req, res)=>{
+  Item.findByIdAndUpdate(req.body._id, req.body, err=>{
+    if (err) return res.status(499).send(err);
+    res.end("Alles gut!");
+  })
+})
+
 router.get('/all', (req, res)=>{
   Item.find({}, (err, items)=>{
     if (err) return res.status(499).send(err);

@@ -3,17 +3,17 @@
     <div class="container" id="edit-item">
 
       <div class="title-row">
-        <h1>ADD ITEM</h1>
+        <h1>{{Item.title | uppercase}}</h1>
       </div>
-      <form ng-submit="Item.save(Item.newItem)">
+      <form ng-submit="Item.save(Item.viewItem)">
 
       <!-- <div class="row save-row">
-        <a class="save-btn fa fa-save" ng-click="Item.save(Item.newItem)"></a>
+        <a class="save-btn fa fa-save" ng-click="Item.save(Item.viewItem)"></a>
       </div> -->
 
       <div class="info-row">
         <h2>TITLE:</h2>
-        <input required type="text" ng-model="Item.newItem.title">
+        <input required type="text" ng-model="Item.viewItem.title">
       </div>
 
       <div class="info-row">
@@ -34,7 +34,7 @@
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
-          <select ng-model="Item.newItem.location" name="location" id="location">
+          <select ng-model="Item.viewItem.location" name="location" id="location">
             <option value="CH1">CH 1</option>
             <option value="CH2">CH 2</option>
             <option value="CH1+CH2">CH 1 + CH 2</option>
@@ -46,7 +46,7 @@
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
-          <select required ng-model="Item.newItem.department" name="department" id="department">
+          <select required ng-model="Item.viewItem.department" name="department" id="department">
             <option value="household">HOUSEHOLD</option>
             <option value="foodService">FOOD SERVICE</option>
             <option value="office">OFFICE</option>
@@ -56,22 +56,22 @@
 
       <div class="info-row">
         <h2>KEYWORDS:</h2>
-        <input ng-model="Item.newItem.keywords" type="text">
+        <input ng-model="Item.viewItem.keywords" type="text">
       </div>
 
       <div class="info-row">
         <h2>UPC CODE:</h2>
-        <input ng-model="Item.newItem.UPC" type="number">
+        <input ng-model="Item.viewItem.UPC" type="number">
       </div>
 
       <div class="info-row">
         <h2>ITEM # / MODEL #:</h2>
-        <input ng-model="Item.newItem.itemOrModelNum" type="string">
+        <input ng-model="Item.viewItem.itemOrModelNum" type="string">
       </div>
 
       <div class="info-row">
         <h2>PREFERRED VENDOR:</h2>
-        <input ng-model="Item.newItem.prefVendor" type="text">
+        <input ng-model="Item.viewItem.prefVendor" type="text">
       </div>
 
       <div class="info-row">
@@ -79,31 +79,32 @@
         <h3>CH 1:</h3>
         <br>
         <label for="ch1-num">Amount:</label>
-        <input ng-model="Item.newItem.stockAmount.CH1" type="number" name="ch1-num" class="num" min="1">
+        <input ng-model="Item.viewItem.stockAmount.CH1" type="number" name="ch1-num" class="num" min="1">
         <br>
         <!-- <label for="ch1-units">Units (e.g. rolls/boxes):</label> -->
-        <!-- <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units"> -->
+        <!-- <input ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units"> -->
         <br>
         <h3>CH 2:</h3>
         <br>
         <label for="ch2-num">Amount:</label>
-        <input ng-model="Item.newItem.stockAmount.CH2" type="number" name="ch2-num" class="num" min="1">
+        <input ng-model="Item.viewItem.stockAmount.CH2" type="number" name="ch2-num" class="num" min="1">
+        <br>
         <label for="ch2-units">Units:</label>
-        <input ng-model="Item.newItem.unitType" type="text" name="ch1-units" class="units">
+        <input required ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units">
         <br>
       </div>
 
       <div class="info-row">
         <h2>ORDERING THRESHOLD:</h2>
         <br>
-        <h3>CH 1: <input required type="number" ng-model="Item.newItem.threshold.CH1" name="ch1-threshold" class="num" min="0"> units remaining</h3>
+        <h3>CH 1: <input required type="number" ng-model="Item.viewItem.threshold.CH1" name="ch1-threshold" class="num" min="0"> units remaining</h3>
         <br>
         <br>
-        <h3>CH 2: <input required type="number" ng-model="Item.newItem.threshold.CH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
+        <h3>CH 2: <input required type="number" ng-model="Item.viewItem.threshold.CH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
       </div>
 
       <div class="row save-row">
-        <a href ng-click="Item.save(Item.newItem)" class="save-btn fa fa-save"></a>
+        <a href ng-click="Item.save(Item.viewItem)" class="save-btn fa fa-save"></a>
       </div>
     </form>
 

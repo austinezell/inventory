@@ -33,8 +33,18 @@
       url: "/addItem",
       views:{
         "content":{
-          templateUrl: "./templates/addItem.html",
-          controller: "ItemCtrl",
+          templateUrl: "./templates/item.html",
+          controller: "AddItemCtrl",
+          controllerAs: "Item"
+        }
+      }
+    })
+    .state("app.editItem", {
+      url: "/editItem",
+      views:{
+        "content":{
+          templateUrl: "./templates/item.html",
+          controller: "EditItemCtrl",
           controllerAs: "Item"
         }
       }
