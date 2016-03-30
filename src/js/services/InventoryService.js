@@ -10,6 +10,6 @@
 
     this.getAltogether = () => $http.get('/inventory/altogether');
 
-    this.remove = (id) => $http.delete(`/inventory/remove/${id}`)
+    this.remove = (id) => $http.delete(`/inventory/${id}`)
   }
 })()

@@ -7,5 +7,7 @@
     this.addUser = (user) => $http.post('/users/add', user);
 
     this.getAll = () => $http.get('/users/all');
+
+    this.removeUser = (id) => $http.delete(`/users/${id}`);
   }
 })()

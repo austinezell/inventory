@@ -45,7 +45,7 @@ router.get('/altogether', (req, res)=>{
   })
 })
 
-router.delete("/remove/:id", (req, res)=>{
+router.delete("/:id", (req, res)=>{
   Item.findByIdAndRemove(req.params.id, (err)=>{
     err ? res.status(499).send(err) : res.end("Alles Gut!")
   })

@@ -19,8 +19,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/addUser.html",
-          controller: "UserCtrl",
-          controllerAs: "User"
+          controller: "AddUserCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -29,8 +29,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/editUser.html",
-          controller: "UserCtrl",
-          controllerAs: "User"
+          controller: "EditUserCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -39,8 +39,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/removeUser.html",
-          controller: "UserCtrl",
-          controllerAs: "User"
+          controller: "RemoveUserCtrl",
+          controllerAs: "Admin"
         }
       }
     })
@@ -49,7 +49,7 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/removeItem.html",
-          controller: "AdminCtrl",
+          controller: "RemoveItemCtrl",
           controllerAs: "Admin"
         }
       }

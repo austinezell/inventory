@@ -1,9 +1,9 @@
 (function(){
   angular.module('inventory')
-  .controller('AdminCtrl', AdminCtrl)
+  .controller('RemoveItemCtrl', RemoveItemCtrl)
 
-  AdminCtrl.$inject = ["InventoryService", "$ionicPopup"]
-  function AdminCtrl(InventoryService, $ionicPopup){
+  RemoveItemCtrl.$inject = ["InventoryService", "$ionicPopup"]
+  function RemoveItemCtrl(InventoryService, $ionicPopup){
     let vm = this;
     vm.filter ={};
     vm.item = {};

@@ -13,4 +13,10 @@ router.get("/all", (req, res)=>{
   })
 })
 
+router.delete("/:id", (req, res)=>{
+  User.findByIdAndRemove(req.params.id, err=>{
+    err ? res.status(499).send(err) : res.send("User Removed")
+  })
+})
+
 module.exports = router;

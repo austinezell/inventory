@@ -1,0 +1,21 @@
+.success {
+  .popup-buttons{
+    button{
+      background-color: green !important;
+    }
+  }
+}
+.popup-body{
+  text-align: center;
+}
+.error {
+  text-transform: uppercase;
+  .popup-head{
+    color: red;
+  }
+  .popup-buttons{
+    button{
+      background-color: red !important;
+    }
+  }
+}

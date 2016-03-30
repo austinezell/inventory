@@ -1,14 +1,11 @@
 (function(){
   angular.module('inventory')
-  .controller('UserCtrl', UserCtrl)
+  .controller('AddUserCtrl', AddUserCtrl)
 
-  UserCtrl.$inject = ["UserService"]
+  AddUserCtrl.$inject = ["UserService", "$ionicPopup"]
 
-  function UserCtrl(UserService){
-    let vm = this;
-    vm.filter ={};
+  function AddUserCtrl(UserService, $ionicPopup){
     vm.newUser ={};
-
     vm.addUser = function(user) {
       UserService.addUser(user)
       .then(res=>{
@@ -17,7 +14,5 @@
         console.error(err);
       })
     }
-
   }
-
 })()
