@@ -9,203 +9,46 @@
       <div class="row add-row">
         <a href="#/app/addItem" class="btn btn-lg fa fa-plus add-item-btn"></a>
       </div>
-
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <!-- CH 1  -->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="ch1heading">
+        <div ng-repeat="(location, inventory) in Browse.inventory track by $index" class="panel panel-default">
+          <div class="panel-heading" role="tab">
             <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-parent="#accordion" href="#ch1collapse" aria-expanded="false" aria-controls="ch1collapse">
-                CH 1
+              <a role="button" data-toggle="collapse" data-parent="#accordion" href="{{'#'+location+'collapse'}}" aria-expanded="false" aria-controls="{{location+'collapse'}}">
+                {{location}}
               </a>
             </h4>
           </div>
-          <div id="ch1collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1heading">
+          <div id="{{location+'collapse'}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1heading">
             <div class="panel-body">
               <!-- CH 1 OFFICE -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch1OfficeHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch1collapse" href="#ch1OfficeCollapse" aria-expanded="false" aria-controls="ch1OfficeCollapse">
-                      Office
+              <div ng-repeat="department in Browse.filters" class="panel panel-default">
+                <div class="panel-heading" role="tab" id="{{location+department.filter+'Heading'}}"> <h4 class="panel-title">
+                  <a role="button"
+                  data-toggle="collapse"
+                  data-parent="{{'#'+location+'collapse'}}"
+                  href="{{'#'+location+department.filter+'collapse'}}"
+                  aria-expanded="false"
+                  aria-controls="{{location+department.filter+'collapse'}}">
+                      {{department.name}}
                     </a>
                   </h4>
                 </div>
-                <div id="ch1OfficeCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1OfficeHeading">
+                <div id="{{location+department.filter+'collapse'}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{location+department.filter+'Heading'}}">
                   <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="">
-                      <a href="./item-detail.html">Item Name</a>
+                    <li class="list-group-item" ng-repeat="item in inventory |filter: {department: department.filter} track by $index ">
+                      <a href="./item-detail.html">{{item.title}}</a>
                     </li>
                   </ul>
                 </div>
               </div>
               <!-- CH 1 FOOD SERVICE -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch1FoodHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch1collapse" href="#ch1FoodCollapse" aria-expanded="false" aria-controls="ch1FoodCollapse">
-                      Food Service
-                    </a>
-                  </h4>
-                </div>
-                <div id="ch1FoodCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1FoodHeading">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- CH 1 HOUSEHOLD -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch1HouseholdHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch1collapse" href="#ch1HouseholdCollapse" aria-expanded="false" aria-controls="ch1HouseholdCollapse">
-                      Household
-                    </a>
-                  </h4>
-                </div>
-                <div id="ch1HouseholdCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1HouseholdHeading">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
 
             </div>
           </div>
         </div>
         <!-- CH 2 -->
-        <div class="panel panel-default">
-          <div class="panel-heading" role="tab" id="ch2heading">
-            <h4 class="panel-title">
-              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#ch2collapse" aria-expanded="false" aria-controls="ch2collapse">
-                CH 2
-              </a>
-            </h4>
-          </div>
-          <div id="ch2collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch2heading">
-            <div class="panel-body">
-              <!-- CH 2 OFFICE -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch2OfficeHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch2collapse" href="#ch2OfficeCollapse" aria-expanded="false" aria-controls="ch2OfficeCollapse">
-                      Office
-                    </a>
-                  </h4>
-                </div>
-                <div id="ch2OfficeCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch2OfficeHeading">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- CH 2 FOOD SERVICE -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch2FoodHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch2collapse" href="#ch2FoodCollapse" aria-expanded="false" aria-controls="ch2FoodCollapse">
-                      Food Service
-                    </a>
-                  </h4>
-                </div>
-                <div id="ch2FoodCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch2FoodHeading">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <!-- CH 2 HOUSEHOLD -->
-              <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="ch2HouseholdHeading">
-                  <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#ch2collapse" href="#ch2HouseholdCollapse" aria-expanded="false" aria-controls="ch2HouseholdCollapse">
-                      Household
-                    </a>
-                  </h4>
-                </div>
-                <div id="ch2HouseholdCollapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch2HouseholdHeading">
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="./item-detail.html">Item Name</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
 
-            </div>
-          </div>
-        </div>
 
-      </div>
-
-    </div>
   </ion-content>
 </ion-view>
