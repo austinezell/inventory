@@ -4,25 +4,35 @@
       <div class="row title-row">
         <h1>ADD USER</h1>
       </div>
-      <form name="addUserForm" ng-submit="User.addUser(User.newUser)">
+      <form name="addUserForm" ng-submit="Admin.addUser(Admin.newUser)">
 
         <div class="row input-row">
           <label for="title">NAME:</label>
           <br>
-          <input required type="text" name="username" ng-model="User.newUser.name" ng-class="{invalid: addUserForm.username.$invalid && addUserForm.username.$touched}">
+          <input required type="text" name="username" ng-model="Admin.newUser.name" ng-class="{invalid: addUserForm.username.$invalid && addUserForm.username.$touched}">
         </div>
 
         <div class="row input-row">
           <label for="title">EMAIL:</label>
           <br>
-          <input required name="email" type="text" ng-model="User.newUser.email" ng-class="{invalid: addUserForm.email.$invalid && addUserForm.email.$touched}">
+          <input required name="email" type="text"
+          ng-pattern="Admin.emailRegEx"
+          ng-model="Admin.newUser.email"
+          ng-class="{invalid: addUserForm.email.$invalid && addUserForm.email.$touched}">
+        </div>
+        <div class="error-message-container">
+          <div
+          ng-show="addUserForm.email.$invalid && addUserForm.email.$touched"
+          class="error-message">
+          Enter A Valid Email!
+        </div>
         </div>
 
         <div class="row input-row">
           <label for="department">DEPARTMENT:</label>
           <br>
           <div class="select">
-            <select name="department" id="department" ng-model="User.newUser.department">
+            <select name="department" id="department" ng-model="Admin.newUser.department">
               <option value="maintenance">MAINTENANCE</option>
               <option value="foodservice">FOOD SERVICE</option>
             </select>
