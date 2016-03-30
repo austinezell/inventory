@@ -6,7 +6,7 @@
         <h1>BROWSE ITEMS</h1>
       </div>
 
-      <div class="row add-row">
+      <div class="add-row">
         <a href="#/app/addItem" class="btn btn-lg fa fa-plus add-item-btn"></a>
       </div>
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -21,7 +21,6 @@
           </div>
           <div id="{{location+'collapse'}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="ch1heading">
             <div class="panel-body">
-              <!-- CH 1 OFFICE -->
               <div ng-repeat="department in Browse.filters" class="panel panel-default">
                 <div class="panel-heading" role="tab" id="{{location+department.filter+'Heading'}}"> <h4 class="panel-title">
                   <a role="button"
@@ -36,8 +35,8 @@
                 </div>
                 <div id="{{location+department.filter+'collapse'}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{location+department.filter+'Heading'}}">
                   <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="item in inventory |filter: {department: department.filter} track by $index ">
-                      <a href="#/app/viewItem()">{{item.title}}</a>
+                    <li class="list-group-item" ng-repeat="item in inventory |filter: {department: department.filter} track by $index">
+                      <a href="#/app/viewItem">{{item.title}}</a>
                     </li>
                   </ul>
                 </div>

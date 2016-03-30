@@ -3,7 +3,7 @@ const Mongoose = require('mongoose');
 const ItemSchema = new Mongoose.Schema({
   title: {type: String, required: true, unique: true},
   description: {type: String},
-  department: {type: String, required: true, enum: ["household", "foodstuffs", "office"]},
+  department: {type: String, required: true, enum: ["household", "foodService", "office"]},
   keywords: [{type: String}],
   UPC: {type: Number},
   itemOrModelNum: {type: String},

@@ -30,11 +30,24 @@ router.post("/add", (req, res)=>{
 router.get('/all', (req, res)=>{
   Item.find({}, (err, items)=>{
     if (err) return res.status(499).send(err);
-    
+
     let CH1 = items.filter(item => /CH1/.test(item.location));
     let CH2 = items.filter(item => /CH2/.test(item.location));
 
     res.send({CH1, CH2})
+  })
+})
+
+router.get('/altogether', (req, res)=>{
+  Item.find({}, (err, items)=>{
+    if (err) return res.status(499).send(err);
+    res.send(items)
+  })
+})
+
+router.delete("/remove/:id", (req, res)=>{
+  Item.findByIdAndRemove(req.params.id, (err)=>{
+    err ? res.status(499).send(err) : res.end("Alles Gut!")
   })
 })
 

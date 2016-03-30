@@ -19,8 +19,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/addUser.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
+          controller: "UserCtrl",
+          controllerAs: "User"
         }
       }
     })
@@ -29,8 +29,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/editUser.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
+          controller: "UserCtrl",
+          controllerAs: "User"
         }
       }
     })
@@ -39,8 +39,8 @@
       views:{
         "content@app":{
           templateUrl: "./templates/admin/removeUser.html",
-          controller: "AdminCtrl",
-          controllerAs: "Admin"
+          controller: "UserCtrl",
+          controllerAs: "User"
         }
       }
     })

@@ -10,9 +10,10 @@
         <br>
         <div class="select">
           <select ng-model="Admin.filter.location" name="location" id="location">
-            <option value="CH1">CH 1</option>
-            <option value="CH2">CH 2</option>
-            <option value="CH1+CH2">CH 1 + CH 2</option>
+            <option value="">Any</option>
+            <option value="CH1">CH1</option>
+            <option value="CH2">CH2</option>
+            <option value="CH1+CH2">CH1+CH2</option>
           </select>
         </div>
       </div>
@@ -22,7 +23,8 @@
         <br>
         <div class="select">
           <select ng-model="Admin.filter.department" name="department" id="department">
-            <option value="food-service">FOOD SERVICE</option>
+            <option value="">ANY</option>
+            <option value="foodService">FOOD SERVICE</option>
             <option value="maintenance">MAINTENANCE</option>
             <option value="office">OFFICE</option>
           </select>
@@ -33,34 +35,39 @@
         <label for="item-name">ITEM NAME:</label>
         <br>
         <div class="select">
-          <select name="item-name" id="item-name">
-            <option value="thing">THING</option>
-            <option value="stuff">STUFF</option>
-            <option value="item">ITEM</option>
-          </select>
-        </div>
+          <select ng-model="Admin.item"
+          name="item-name"
+          ng-options="item as item.title for item in Admin.inventory |filter: Admin.filter"
+          id="item-name">
+        </select>
       </div>
-
-      <div class="row input-row">
-        <h3>YOU CHOSE:</h3>
-      </div>
-      <br>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h2>THINGY</h2>
-          <span>MAINTENENCE | THINGS | CH 1</span>
-        </div>
-      </div>
-
-      <div class="row trash-row">
-        <a href="" class="btn btn-lg trash-btn fa fa-trash"></a>
-      </div>
-
-      <div class="row input-row btns-row">
-        <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-remove-btn"></a>
-      </div>
-
     </div>
 
-  </ion-content>
+    <div class="row input-row">
+      <h3>YOU CHOSE:</h3>
+    </div>
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-body" ng-show="Admin.item._id">
+        <h2>{{Admin.item.title | uppercase}}</h2>
+        <span>{{Admin.item.department | uppercase}} |</span>
+        <span> THINGS |</span>
+        <span>{{Admin.item.location | uppercase}}</span>
+      </div>
+      <div class="panel-body" ng-hide="Admin.item._id">
+        <span>No Item Selected</span>
+      </div>
+    </div>
+
+    <div class="row trash-row">
+      <a href="" ng-disabled="!Admin.item._id" ng-click="Admin.confirmDelete(Admin.item)" class="btn btn-lg trash-btn fa fa-trash"></a>
+    </div>
+
+    <div class="row input-row btns-row">
+      <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-remove-btn"></a>
+    </div>
+
+  </div>
+
+</ion-content>
 </ion-view>

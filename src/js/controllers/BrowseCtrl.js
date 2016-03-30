@@ -11,21 +11,18 @@
       filter: "office"
     }, {
       name: "Food Service",
-      filter: "foodstuffs"
+      filter: "foodService"
     },{
       name: "Household",
       filter: "household"
     }]
-      getAll();
+    getAll();
 
-      function getAll(){
-        InventoryService.getAll()
-        .then(res=>{
-          vm.inventory.CH1 = res.data.CH1;
-          vm.inventory.CH2 = res.data.CH2;
-
-        })
-      }
-
+    function getAll(){
+      InventoryService.getAll()
+      .then(res=>{
+        vm.inventory = res.data;
+      })
     }
-  })()
+  }
+})()

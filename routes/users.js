@@ -7,4 +7,10 @@ router.post("/add", (req, res)=>{
   })
 })
 
+router.get("/all", (req, res)=>{
+  User.find({}, (err, users)=>{
+    err ? res.status(499).send(err) : res.send(users)
+  })
+})
+
 module.exports = router;
