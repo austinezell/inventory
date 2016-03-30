@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node app.js",
-    "postinstall": "bower i && gulp dev"
+    "postinstall": "bower i && gulp index && gulp dev"
   },
   "name": "inventory",
   "version": "1.1.1",

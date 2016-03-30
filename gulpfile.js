@@ -46,6 +46,10 @@ gulp.task("javascript", function(done) {
   });
 });
 
+gulp.task('index', function(){
+  return require('./fileReader')();
+})
+
 
 gulp.task('sass', function(done) {
   gulp.src(paths.src.sass)
