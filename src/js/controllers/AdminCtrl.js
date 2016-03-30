@@ -26,12 +26,18 @@
         if (res){
           InventoryService.remove(item._id)
           .then(res=>{
+            $ionicPopup.alert({
+              title: "Success!",
+              cssClass: "success",
+              template: "Item successfully removed."
+            })
             let index = vm.inventory.indexOf(item);
             vm.inventory.splice(index, 1);
             vm.item = {};
           }, err=>{
             $ionicPopup.alert({
               title: "Error!",
+              cssClass: "error",
               template: "Something went wrong. Call AJ."
             })
           })

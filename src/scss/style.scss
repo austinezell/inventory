@@ -12,3 +12,18 @@
 .input-row input.invalid:not(:focus){
   border-bottom-color: red !important;
 }
+
+.success {
+  .popup-buttons{
+    background-color: green !important;
+  }
+}
+.error {
+  .popup-head{
+    color: red;
+    text-transform: uppercase;
+  }
+  .popup-buttons{
+    background-color: red !important;
+  }
+}
