@@ -1,6 +1,6 @@
+"use strict";
 const Mongoose = require('mongoose');
-// took out required from unitType. Put it back, later.
-const ItemSchema = new Mongoose.Schema({
+let ItemSchema = new Mongoose.Schema({
   title: {type: String, required: true, unique: true},
   description: {type: String},
   department: {type: String, required: true, enum: ["household", "foodService", "office"]},
@@ -15,13 +15,22 @@ const ItemSchema = new Mongoose.Schema({
   stockAmountCH2: {type: Number, default: 1},
   currentAmountCH2: {type: Number, default: 0},
   location: {type: String, required: true, enum: ["CH1", "CH2", "CH1+CH2"]},
-  unitType: {type: String},
+  unitType: {type: String, required: true},
+  lastUpdatedBy: {type: Mongoose.Schema.Types.ObjectId, ref: "User"},
   lastUpdated: {type: Date}
 })
 
-ItemSchema.pre("save", (next)=>{
+
+ItemSchema.pre("save", preSaveOrUpdate);
+function preSaveOrUpdate(next){
   this.lastUpdated = new Date();
+  if(!(/s$/.test(this.unitType))){
+    this.unitType = `${this.unitType}s`
+  }
   next();
-});
+}
+
+
+
 
 module.exports = Mongoose.model("Item", ItemSchema)

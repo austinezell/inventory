@@ -8,10 +8,12 @@
     let vm = this;
     vm.item = ModalService.detailed;
 
-    vm.modalClose = () =>{
+    vm.modalClose = (clearData) =>{
       ModalService.modal.remove()
-      .then(()=>ModalService.modal = null);
-      ModalService.detailed = null;
+      .then(()=>{
+        ModalService.modal = null;
+        if(clearData) ModalService.detailed = null;
+      })
     }
   }
 }());

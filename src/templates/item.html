@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view cache-view="false">
   <ion-content>
     <div class="container" id="edit-item">
 
@@ -6,10 +6,6 @@
         <h1>{{Item.title | uppercase}}</h1>
       </div>
       <form ng-submit="Item.save(Item.viewItem)">
-
-      <!-- <div class="row save-row">
-        <a class="save-btn fa fa-save" ng-click="Item.save(Item.viewItem)"></a>
-      </div> -->
 
       <div class="info-row">
         <h2>TITLE:</h2>
@@ -79,7 +75,7 @@
         <h3>CH 1:</h3>
         <br>
         <label for="ch1-num">Amount:</label>
-        <input ng-model="Item.viewItem.stockAmount.CH1" type="number" name="ch1-num" class="num" min="1">
+        <input ng-model="Item.viewItem.stockAmountCH1" type="number" name="ch1-num" class="num" min="1">
         <br>
         <!-- <label for="ch1-units">Units (e.g. rolls/boxes):</label> -->
         <!-- <input ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units"> -->
@@ -87,7 +83,7 @@
         <h3>CH 2:</h3>
         <br>
         <label for="ch2-num">Amount:</label>
-        <input ng-model="Item.viewItem.stockAmount.CH2" type="number" name="ch2-num" class="num" min="1">
+        <input ng-model="Item.viewItem.stockAmountCH2" type="number" name="ch2-num" class="num" min="1">
         <br>
         <label for="ch2-units">Units:</label>
         <input required ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units">
@@ -97,10 +93,10 @@
       <div class="info-row">
         <h2>ORDERING THRESHOLD:</h2>
         <br>
-        <h3>CH 1: <input required type="number" ng-model="Item.viewItem.threshold.CH1" name="ch1-threshold" class="num" min="0"> units remaining</h3>
+        <h3>CH 1: <input required type="number" ng-model="Item.viewItem.thresholdCH1" name="ch1-threshold" class="num" min="0"> units remaining</h3>
         <br>
         <br>
-        <h3>CH 2: <input required type="number" ng-model="Item.viewItem.threshold.CH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
+        <h3>CH 2: <input required type="number" ng-model="Item.viewItem.thresholdCH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
       </div>
 
       <div class="row save-row">

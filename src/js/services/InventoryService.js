@@ -6,7 +6,7 @@
   function InventoryService($http){
     this.addItem = (item) => $http.post('/inventory/add', item);
 
-    this.editItem = (item) => $http.put('/inventory/', item);
+    this.update = (item) => $http.put('/inventory/', item);
 
     this.getAll = () => $http.get('/inventory/all');
 

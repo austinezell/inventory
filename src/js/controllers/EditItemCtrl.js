@@ -2,11 +2,12 @@
   angular.module('inventory')
   .controller('EditItemCtrl', EditItemCtrl);
 
-  EditItemCtrl.$inject = ["InventoryService"];
+  EditItemCtrl.$inject = ["InventoryService", "ModalService", "$ionicPopup"];
 
-  function EditItemCtrl(InventoryService){
+  function EditItemCtrl(InventoryService, ModalService, $ionicPopup){
     let vm = this;
     vm.title = "Edit Item";
+    vm.viewItem = ModalService.detailed;
 
     vm.save = function(item) {
       InventoryService.update(item)

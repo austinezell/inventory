@@ -1,80 +1,80 @@
-<ion-modal-view ng-controller="ItemDetailCtrl as Browse">
+<ion-modal-view ng-controller="ItemDetailCtrl as Details">
   <ion-header-bar>
-    <h1 class="title">{{Browse.item.title | uppercase}} Details</h1>
+    <h1 class="title">{{Details.item.title | uppercase}} Details</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="Browse.modalClose()">Close</button>
+      <button class="button button-clear" ng-click="Details.modalClose(true)">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
     <div class="container" id="item-detail">
       <div class="row edit-row">
-        <a href="#/app/editItem" class="edit-btn fa fa-pencil"></a>
+        <a href="#/app/editItem" ng-click="Details.modalClose(false)"  class="edit-btn fa fa-pencil"></a>
       </div>
 
 
-    <div class="row info-row">
-      <h2>PICTURES:</h2>
-      <div class="picture-row">
-        <img src="http://placehold.it/175" alt=""/>
-        <img src="http://placehold.it/175" alt=""/>
-        <img src="http://placehold.it/175" alt=""/>
+      <div class="row info-row">
+        <h2>PICTURES:</h2>
+        <div class="picture-row">
+          <img src="http://placehold.it/175" alt=""/>
+          <img src="http://placehold.it/175" alt=""/>
+          <img src="http://placehold.it/175" alt=""/>
+        </div>
       </div>
-    </div>
 
-    <div class="row info-row">
-      <h2>Description:</h2>
-      <p>{{Browse.item.description || "No Description"}}</p>
-    </div>
+      <div class="row info-row">
+        <h2>Description:</h2>
+        <p>{{Details.item.description || "No Description"}}</p>
+      </div>
 
-    <div class="row info-row">
-      <h2>DEPARTMENT:</h2>
-      <h3>{{Browse.item.department | uppercase}}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>DEPARTMENT:</h2>
+        <h3>{{Details.item.department | uppercase}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>LOCATION:</h2>
-      <h3>{{Browse.item.location}}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>LOCATION:</h2>
+        <h3>{{Details.item.location}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>KEYWORDS:</h2>
-      <h3 ng-repeat="keyword in Browse.item.keywords">{{keyword}}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>KEYWORDS:</h2>
+        <h3 ng-repeat="keyword in Details.item.keywords">{{keyword}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>UPC CODE:</h2>
-      <h3>{{Browse.item.UPC || "N/A"}}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>UPC CODE:</h2>
+        <h3>{{Details.item.UPC || "N/A"}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>ITEM # / MODEL #:</h2>
-      <h3>{{Browse.item.itemOrModelNum || "N/A"}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>ITEM # / MODEL #:</h2>
+        <h3>{{Details.item.itemOrModelNum || "N/A"}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>PREFERRED VENDOR:</h2>
-      <h3>{{Browse.item.prefVendor}}</h3>
-    </div>
+      <div class="row info-row">
+        <h2>PREFERRED VENDOR:</h2>
+        <h3>{{Details.item.prefVendor || "N/A"}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>AMOUNT TO STOCK:</h2>
-      <h3>CH 1: 500 units</h3>
-      <br>
-      <h3>CH 2: 300 units</h3>
-    </div>
+      <div class="row info-row">
+        <h2>AMOUNT TO STOCK:</h2>
+        <br>
+        <h3>CH 1: {{Details.item.stockAmountCH1}} {{Details.item.unitType || "units"}}</h3>
+        <h3>CH 2: {{Details.item.stockAmountCH2}} {{Details.item.unitType || "units"}}</h3>
+      </div>
 
-    <div class="row info-row">
-      <h2>ORDERING THRESHOLD:</h2>
-      <h3>CH 1: 200 units remaining</h3>
-      <br>
-      <h3>CH 2: 100 units remaining</h3>
-    </div>
+      <div class="row info-row">
+        <h2>ORDERING THRESHOLD:</h2>
+        <br>
+        <h3>CH 1: {{Details.item.stockAmountCH1}} {{Details.item.unitType || "units"}} remaining</h3>
+        <h3>CH 2: {{Details.item.stockAmountCH2}} {{Details.item.unitType || "units"}} remaining</h3>
+      </div>
 
-    <div class="row edit-row">
-      <a href="#/app/editItem" class="edit-btn fa fa-pencil"></a>
-    </div>
+      <div class="row edit-row">
+        <a href="#/app/editItem" ng-click="Details.modalClose(false)" class="edit-btn fa fa-pencil"></a>
+      </div>
 
-    <!-- </div> -->
+    </div>
 
   </ion-content>
 </ion-modal-view>

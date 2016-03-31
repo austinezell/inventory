@@ -1,9 +1,11 @@
 "use strict";
 const router = require("express").Router();
 const Item = require("../models/ItemSchema");
+const cleanArray = require('../config/cleanArray')
 
 router.post("/add", (req, res)=>{
-  req.body.keywords = req.body.keywords.split(/[^'\w]+/g);
+  req.body.keywords = req.body.keywords.trim().split(/[^'\w]+/g);
+  req.body.keywords = cleanArray(req.body.keywords);
   Item.create(req.body, (err, item)=> {
     if (err) return res.status(499).send(err);
 
@@ -12,7 +14,14 @@ router.post("/add", (req, res)=>{
 })
 
 router.put("/", (req, res)=>{
-  Item.findByIdAndUpdate(req.body._id, req.body, err=>{
+  let item = req.body;
+  item.lastUpdated = new Date();
+  if(!(/s$/.test(item.unitType))){
+    item.unitType = `${item.unitType}s`
+  }
+  item.keywords = item.keywords.join(" ").trim().split(/[^'\w]+/g);
+  item.keywords = cleanArray(item.keywords);
+  Item.findOneAndUpdate({_id:item._id}, {$set:item}, (err, item)=>{
     if (err) return res.status(499).send(err);
     res.end("Alles gut!");
   })

@@ -2,21 +2,16 @@
   angular.module('inventory')
   .controller('AddItemCtrl', AddItemCtrl);
 
-  AddItemCtrl.$inject = ["InventoryService"];
+  AddItemCtrl.$inject = ["InventoryService", "$ionicPopup"];
 
-  function AddItemCtrl(InventoryService){
+  function AddItemCtrl(InventoryService, $ionicPopup){
     let vm = this;
     vm.title = "Add Item";
-    vm.viewItem = {
-      threshold: {
-        CH1: 0,
-        CH2: 0
-      },
-      stockAmount: {
-        CH1: 1,
-        CH2: 1
-      }
-    };
+    vm.viewItem = {};
+    vm.viewItem.thresholdCH1 = 0;
+    vm.viewItem.thresholdCH2 = 0;
+    vm.viewItem.stockAmountCH1 = 1;
+    vm.viewItem.stockAmountCH2 = 1;
     vm.save = function(item) {
       InventoryService.addItem(item)
       .then(res=> {
