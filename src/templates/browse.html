@@ -36,7 +36,7 @@
                 <div id="{{location+department.filter+'collapse'}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{{location+department.filter+'Heading'}}">
                   <ul class="list-group">
                     <li class="list-group-item" ng-repeat="item in inventory |filter: {department: department.filter} track by $index">
-                      <a href="#/app/viewItem">{{item.title}}</a>
+                      <a href ng-click="Browse.openModal(item)">{{item.title}}</a>
                     </li>
                   </ul>
                 </div>

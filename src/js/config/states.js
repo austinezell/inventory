@@ -7,7 +7,7 @@
     .state("app", {
       url: "/app",
       abstract: true,
-      templateUrl: "./templates/nav.html"
+      templateUrl: "./templates/general/nav.html"
     })
     .state("app.browse", {
       url: "/browse",
