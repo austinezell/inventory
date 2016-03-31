@@ -20,8 +20,9 @@ let ItemSchema = new Mongoose.Schema({
   lastUpdated: {type: Date}
 })
 
-
+ItemSchema.pre("update", preSaveOrUpdate)
 ItemSchema.pre("save", preSaveOrUpdate);
+
 function preSaveOrUpdate(next){
   this.lastUpdated = new Date();
   if(!(/s$/.test(this.unitType))){
