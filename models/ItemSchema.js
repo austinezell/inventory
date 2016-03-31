@@ -17,7 +17,9 @@ let ItemSchema = new Mongoose.Schema({
   location: {type: String, required: true, enum: ["CH1", "CH2", "CH1+CH2"]},
   unitType: {type: String, required: true},
   lastUpdatedBy: {type: Mongoose.Schema.Types.ObjectId, ref: "User"},
-  lastUpdated: {type: Date}
+  lastUpdated: {type: Date},
+  orderLogs:  [{type: Mongoose.Schema.Types.ObjectId, ref: "Orders"}],
+  inventoryLogs:  [{type: Mongoose.Schema.Types.ObjectId, ref: "Inventory"}]
 })
 
 ItemSchema.pre("update", preSaveOrUpdate)

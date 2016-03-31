@@ -4,8 +4,10 @@ const Item = require("../models/ItemSchema");
 const ArrayFunctions = require('../config/cleanArray')
 
 router.post("/add", (req, res)=>{
-  req.body.keywords = req.body.keywords.trim().split(/[^'\w]+/g);
-  req.body.keywords = ArrayFunctions.cleanArray(req.body.keywords);
+  if(req.body.keywords){
+    req.body.keywords = req.body.keywords.trim().split(/[^'\w]+/g);
+    req.body.keywords = ArrayFunctions.cleanArray(req.body.keywords);
+  }
   Item.create(req.body, (err, item)=> {
     if (err) return res.status(499).send(err);
 

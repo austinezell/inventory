@@ -1,1 +1,5 @@
-application for keeping inventory.
+#application for keeping inventory.
+
+
+run `npm install`
+`postinstall` does the rest.

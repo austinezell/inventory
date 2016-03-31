@@ -14,6 +14,7 @@
     vm.viewItem.stockAmountCH2 = 1;
     vm.save = function(item) {
       ItemService.addItem(item)
+      .then(()=> vm.viewItem = {});
     }
 
   }

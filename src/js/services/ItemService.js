@@ -5,13 +5,13 @@
   ItemService.$inject = ["$http", "ErrorSuccessService"];
   function ItemService($http, ErrorSuccessService){
     this.addItem = (item) => {
-      $http.post('/items/add', item)
+      return $http.post('/items/add', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully added"))
       .catch(ErrorSuccessService.handleError);
     }
 
     this.update = (item) => {
-      $http.put('/items/', item)
+      return $http.put('/items/', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully updated"))
       .catch(ErrorSuccessService.handleError);
     }

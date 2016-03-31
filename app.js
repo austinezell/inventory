@@ -24,8 +24,7 @@ app.set('port', port);
 
 
 var server = http.createServer(app);
-var fileWalker = require('./fileReader');
-fileWalker();
+require('./fileReader')();
 
 server.listen(port);
 module.exports = app;
