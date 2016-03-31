@@ -5,5 +5,4 @@ node_modules/
 platforms/
 plugins/
 www/
-inventory/
 src/js/index.js

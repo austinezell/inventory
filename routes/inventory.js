@@ -21,7 +21,7 @@ router.put("/", (req, res)=>{
   }
   item.keywords = item.keywords.join(" ").trim().split(/[^'\w]+/g);
   item.keywords = cleanArray(item.keywords);
-  Item.findOneAndUpdate({_id:item._id}, {$set:item}, (err, item)=>{
+  Item.findByIdAndUpdate(item._id, item, (err, item)=>{
     if (err) return res.status(499).send(err);
     res.end("Alles gut!");
   })

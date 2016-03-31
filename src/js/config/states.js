@@ -19,16 +19,6 @@
         }
       }
     })
-    .state("app.inventory", {
-      url: "/inventory",
-      views:{
-        "content":{
-          templateUrl: "./templates/inventory.html",
-          controller: "InventoryCtrl",
-          controllerAs: "Inventory"
-        }
-      }
-    })
     .state("app.addItem", {
       url: "/addItem",
       views:{
