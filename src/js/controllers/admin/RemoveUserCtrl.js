@@ -11,10 +11,7 @@
 
     function getUsers(){
       UserService.getAll()
-      .then(
-        res => vm.users = res.data,
-        err => console.error(err)
-      )
+      .then(res => vm.users = res.data)
     }
 
     vm.removeUser = function(user){
@@ -26,20 +23,9 @@
         if(res){
           UserService.removeUser(user._id)
           .then(res=>{
-            $ionicPopup.alert({
-              title: "Success!",
-              cssClass: "success",
-              template: "That guy was totz fired."
-            })
             let index = vm.users.indexOf(user);
             vm.users.splice(index, 1);
             vm.selected = {};
-          }, err=>{
-            $ionicPopup.alert({
-              title: "Error!",
-              cssClass: "error",
-              template: "Something went wrong. Call AJ."
-            })
           })
         }
       })

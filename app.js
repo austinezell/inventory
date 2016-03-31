@@ -17,7 +17,8 @@ app.use(express.static(path.join(__dirname, 'www')));
 
 // app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
-app.use('/inventory', require('./routes/inventory'));
+// app.use('/inventory', require('./routes/inventory'));
+app.use('/items', require('./routes/items'));
 const port = process.env.PORT || 3000;
 app.set('port', port);
 

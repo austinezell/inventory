@@ -7,8 +7,8 @@
       </div>
 
       <div class="input-row">
-        <label for="search" ng-model="" class="fa fa-search"></label>
-        <input type="text" name="search" id="search">
+        <label for="search"  class="fa fa-search"></label>
+        <input type="text" ng-model="Inventory.searchFilter.$" name="search" id="search">
       </div>
 
       <div class="input-row">
@@ -16,11 +16,9 @@
           <label for="location">LOCATION:</label>
           <br>
           <div class="select">
-            <select name="location" id="location">
-              <option value="">Any</option>
-              <option value="CH1">CH 1</option>
+            <select ng-model="Inventory.searchFilter.location" name="location" id="location">
+              <option selected value="CH1">CH 1</option>
               <option value="CH2">CH 2</option>
-              <option value="CH1+CH2">CH 1 + CH 2</option>
             </select>
           </div>
         </div>
@@ -28,7 +26,7 @@
           <label for="department">DEPARTMENT:</label>
           <br>
           <div class="select">
-            <select name="department" id="department">
+            <select ng-model="Inventory.searchFilter.department" name="department" id="department">
               <option value="">All</option>
               <option value="maintenance">HOUSEHOLD</option>
               <option value="foodService">FOOD SERVICE</option>
@@ -38,22 +36,22 @@
         </div>
       </div>
 
-      <div class="col-xs-12 item-row">
+      <div ng-repeat="item in Inventory.items | filter:Inventory.searchFilter" class="col-xs-12 item-row">
         <div class="panel panel-default">
           <div class="panel-body">
-            <h2 class="caps">PAPER TOWELS</h2>
-            <input type="number">
-            <span>&nbsp;/ 100 rolls</span>
-            <a href="" class="btn btn-update fa fa-check"></a>
+            <h2 class="caps">{{item.title}}</h2>
+            <input ng-model="item.currentAmountCH1" type="number">
+            <span>&nbsp; / {{item.stockAmountCH1}} {{item.unitType.substr(0,6)}}</span>
+            <a ng-click="Inventory.update(item)" class="btn btn-update fa fa-check"></a>
             <br>
             <div class="col-xs-4">
               <a href="#/app/inventory/log" class="btn btn-sm more-info-btn">IL</a>
             </div>
             <div class="col-xs-4">
-              <a href="#/app/inventor/orders" class="btn btn-sm more-info-btn">OL</a>
+              <a href="#/app/inventory/orders" class="btn btn-sm more-info-btn">OL</a>
             </div>
             <div class="col-xs-4">
-              <a href ng-click="Inventory.modalOpen()" class="btn btn-sm more-info-btn">ID</a>
+              <a href ng-click="Inventory.openItemModal(item)" class="btn btn-sm more-info-btn">ID</a>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ const sh = require('shelljs');
 const prefixer = require('gulp-autoprefixer');
 const minify = require('gulp-minify');
 const webpack = require('webpack');
-const nodemon = require('gulp-nodemon')
+const nodemon = require('gulp-nodemon');
 
 const paths = {
   src: {

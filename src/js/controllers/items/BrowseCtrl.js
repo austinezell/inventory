@@ -2,8 +2,8 @@
   angular.module("inventory")
   .controller("BrowseCtrl", BrowseCtrl)
 
-  BrowseCtrl.$inject =["InventoryService", "$ionicModal", "ModalService"];
-  function BrowseCtrl(InventoryService, $ionicModal, ModalService){
+  BrowseCtrl.$inject =["ItemService", "ModalService"];
+  function BrowseCtrl(ItemService, ModalService){
     let vm = this;
     vm.inventory = {};
     vm.filters = [{
@@ -17,13 +17,11 @@
       filter: "household"
     }];
 
-    getAll();
+    getItems();
 
-    function getAll(){
-      InventoryService.getAll()
-      .then(res=>{
-        vm.inventory = res.data;
-      })
+    function getItems(){
+      ItemService.getAll()
+      .then(res=> vm.inventory = res.data)
     };
     vm.openModal = function(item){
       ModalService.createItemModal(item)

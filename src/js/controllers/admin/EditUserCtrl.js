@@ -1,11 +1,11 @@
 (function() {
   "use strict";
   angular.module("inventory")
-  .controller('EditUserCtrl', EditUserCtrl)
+  .controller('EditUserCtrl', EditUserCtrl);
 
-  EditUserCtrl.$inject = ["UserService", "$ionicPopup"]
+  EditUserCtrl.$inject = ["UserService"];
 
-  function EditUserCtrl(UserService, $ionicPopup){
+  function EditUserCtrl(UserService){
     let vm = this;
     vm.selected = {};
     vm.emailRegEx = /(\w+\.)*(\w+@\w+\.\w+)(\.\w+)*/
@@ -13,28 +13,11 @@
 
     function getUsers(){
       UserService.getAll()
-      .then(
-        res => vm.users = res.data,
-        err => console.error(err)
-      )
+      .then(res => vm.users = res.data)
     }
 
     vm.save = (user)=> {
       UserService.update(user)
-      .then(res=>{
-        vm.newUser = {};
-        $ionicPopup.alert({
-          title: "Success!",
-          cssClass: "success",
-          template: "User successfully updated."
-        })
-      },err=>{
-        $ionicPopup.alert({
-          title: "Error!",
-          cssClass: "error",
-          template: "Something went wrong. Call AJ."
-        })
-      })
     }
   }
 }());

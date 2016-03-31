@@ -28,7 +28,7 @@
       url: "/orders",
       views:{
         "content@app":{
-          templateUrl: "./templates/invetory/orderLog.html",
+          templateUrl: "./templates/inventory/orderLog.html",
           controller: "OrderLogCtrl",
           controllerAs: "Inventory"
         }

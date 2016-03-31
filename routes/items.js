@@ -1,11 +1,11 @@
 "use strict";
 const router = require("express").Router();
 const Item = require("../models/ItemSchema");
-const cleanArray = require('../config/cleanArray')
+const ArrayFunctions = require('../config/cleanArray')
 
 router.post("/add", (req, res)=>{
   req.body.keywords = req.body.keywords.trim().split(/[^'\w]+/g);
-  req.body.keywords = cleanArray(req.body.keywords);
+  req.body.keywords = ArrayFunctions.cleanArray(req.body.keywords);
   Item.create(req.body, (err, item)=> {
     if (err) return res.status(499).send(err);
 
@@ -31,6 +31,7 @@ router.get('/all', (req, res)=>{
   Item.find({}, (err, items)=>{
     if (err) return res.status(499).send(err);
 
+    items.sort(ArrayFunctions.sortObjects)
     let CH1 = items.filter(item => /CH1/.test(item.location));
     let CH2 = items.filter(item => /CH2/.test(item.location));
 
@@ -41,6 +42,7 @@ router.get('/all', (req, res)=>{
 router.get('/altogether', (req, res)=>{
   Item.find({}, (err, items)=>{
     if (err) return res.status(499).send(err);
+    items.sort(ArrayFunctions.sortObjects)
     res.send(items)
   })
 })
