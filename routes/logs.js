@@ -24,11 +24,12 @@ router.put("/takeInventory", (req, res)=>{
   })
 })
 
-router.get("/inventory/:id", (req, res)=>{
+router.get("/inventory/:id/:locale", (req, res)=>{
   Item.findById(req.params.id)
   .populate("inventoryLogs")
   .exec((err, item)=>{
-    err ? res.status(477).send(err) : res.send(item.inventoryLogs)
+    let logs = item.inventoryLogs.filter(log=>log.location === req.params.locale);
+    err ? res.status(477).send(err) : res.send(logs.reverse());
   })
 })
 

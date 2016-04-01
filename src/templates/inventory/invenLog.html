@@ -19,34 +19,34 @@
       <div class="input-row select-row">
         <div class="col-xs-12">
           <div class="select">
-            <select name="sort" id="sort">
-              <option value="new-old">NEW - OLD</option>
-              <option value="old-new">OLD - NEW</option>
+            <select ng-model="Inventory.filterDate" name="sort" id="sort">
+              <option value="-date">NEW - OLD</option>
+              <option value="date">OLD - NEW</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div ng-if="Inventory.hasLogs" class="col-xs-12 item-row">
+      <div ng-repeat="log in Inventory.logs | orderBy: Inventory.filterDate" ng-if="Inventory.hasLogs" class="col-xs-12 item-row">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="date">
-              <h3 class="">03/14/16</h3>
+              <h3 class="">{{log.date.toLocaleDateString()}}</h3>
             </div>
             <div class="update">
               <h3>Updated by:</h3>
               <br>
-              <h4>Mario</h4>
+              <h4>{{log.user}}</h4>
             </div>
             <div class="amount">
               <h3>Amount entered:</h3>
               <br>
-              <h4>75 / 100 rolls</h4>
+              <h4>{{log.amount}} / {{Inventory.item.locationStock}} {{Inventory.item.unitType}}</h4>
             </div>
           </div>
         </div>
       </div>
-      
+
       <div ng-if="!Inventory.hasLogs" class="col-xs-12 item-row">
         <div class="panel panel-default">
           <div class="panel-body">

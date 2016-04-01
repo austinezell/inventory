@@ -14,8 +14,9 @@
       });
     }
 
-    this.createInvenLogModal = (item) => {
+    this.createInvenLogModal = (item, location) => {
       this.item = item;
+      this.location = location;
       return $ionicModal.fromTemplateUrl('./templates/inventory/invenLog.html')
       .then((modal)=> {
         this.modal = modal;

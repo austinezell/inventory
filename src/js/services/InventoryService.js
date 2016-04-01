@@ -10,7 +10,7 @@
       .catch(ErrorSuccessService.handleError)
     }
 
-    this.getLogs = (id) => $http.get(`/logs/inventory/${id}`).catch(ErrorSuccessService.handleError)
+    this.getLogs = (id, location) => $http.get(`/logs/inventory/${id}/${location}`).catch(ErrorSuccessService.handleError)
 
   }
 })()

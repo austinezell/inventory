@@ -30,7 +30,7 @@
     }
 
     vm.openInvenLogModal = (item) =>{
-      ModalService.createInvenLogModal(item)
+      ModalService.createInvenLogModal(item, vm.searchFilter.location)
       .then(()=>ModalService.modal.show())
     }
   }
