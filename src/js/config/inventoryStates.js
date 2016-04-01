@@ -14,26 +14,26 @@
         }
       }
     })
-    .state("app.inventory.log", {
-      url: "/log",
-      views:{
-        "content@app":{
-          templateUrl: "./templates/inventory/invenLog.html",
-          controller: "InvenLogCtrl",
-          controllerAs: "Inventory"
-        }
-      }
-    })
-    .state("app.inventory.orders", {
-      url: "/orders",
-      views:{
-        "content@app":{
-          templateUrl: "./templates/inventory/orderLog.html",
-          controller: "OrderLogCtrl",
-          controllerAs: "Inventory"
-        }
-      }
-    })
+    // .state("app.inventory.log", {
+    //   url: "/log",
+    //   views:{
+    //     "content@app":{
+    //       templateUrl: "./templates/inventory/invenLog.html",
+    //       controller: "InvenLogCtrl",
+    //       controllerAs: "Inventory"
+    //     }
+    //   }
+    // })
+    // .state("app.inventory.orders", {
+    //   url: "/orders",
+    //   views:{
+    //     "content@app":{
+    //       templateUrl: "./templates/inventory/orderLog.html",
+    //       controller: "OrderLogCtrl",
+    //       controllerAs: "Inventory"
+    //     }
+    //   }
+    // })
 
   }
 })();

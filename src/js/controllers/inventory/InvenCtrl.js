@@ -2,8 +2,8 @@
   angular.module('inventory')
   .controller('InventoryCtrl', InventoryCtrl)
 
-  InventoryCtrl.$inject = ["ItemService", "ModalService"]
-  function InventoryCtrl(ItemService, ModalService){
+  InventoryCtrl.$inject = ["ItemService", "InventoryService", "ModalService"]
+  function InventoryCtrl(ItemService, InventoryService, ModalService){
     let vm = this;
     vm.searchFilter={
       department: "",
@@ -26,9 +26,9 @@
       update = {key, amount, itemId},
       inven = {location, amount},
       obj = {inven, update};
-      ItemService.takeInventory(obj)
+      InventoryService.takeInventory(obj)
     }
-    
+
     vm.openInvenLogModal = (item) =>{
       ModalService.createInvenLogModal(item)
       .then(()=>ModalService.modal.show())

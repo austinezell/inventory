@@ -24,8 +24,8 @@ router.put("/takeInventory", (req, res)=>{
   })
 })
 
-router.get("/inventory", (req, res)=>{
-  Item.findById(req.body.id)
+router.get("/inventory/:id", (req, res)=>{
+  Item.findById(req.params.id)
   .populate("inventoryLogs")
   .exec((err, item)=>{
     err ? res.status(477).send(err) : res.send(item.inventoryLogs)

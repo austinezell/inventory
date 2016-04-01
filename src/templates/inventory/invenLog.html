@@ -1,7 +1,13 @@
-<ion-view>
+<ion-modal-view ng-controller="InvenLogCtrl as Inventory">
+  <ion-header-bar>
+    <h1 class="title">{{Inventory.item.title | uppercase}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="Inventory.modalClose(true)">Close</button>
+    </div>
+  </ion-header-bar>
   <ion-content>
     <div class="container" id="inventory-log">
-      
+
       <div class="title-row">
         <h1>INVENTORY LOG</h1>
       </div>
@@ -21,7 +27,7 @@
         </div>
       </div>
 
-      <div class="col-xs-12 item-row">
+      <div ng-if="Inventory.hasLogs" class="col-xs-12 item-row">
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="date">
@@ -40,47 +46,15 @@
           </div>
         </div>
       </div>
-
-      <div class="col-xs-12 item-row">
+      
+      <div ng-if="!Inventory.hasLogs" class="col-xs-12 item-row">
         <div class="panel panel-default">
           <div class="panel-body">
-            <div class="date">
-              <h3 class="">03/14/16</h3>
-            </div>
-            <div class="update">
-              <h3>Updated by:</h3>
-              <br>
-              <h4>Mario</h4>
-            </div>
-            <div class="amount">
-              <h3>Amount entered:</h3>
-              <br>
-              <h4>75 / 100 rolls</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 item-row">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <div class="date">
-              <h3 class="">03/14/16</h3>
-            </div>
-            <div class="update">
-              <h3>Updated by:</h3>
-              <br>
-              <h4>Mario</h4>
-            </div>
-            <div class="amount">
-              <h3>Amount entered:</h3>
-              <br>
-              <h4>75 / 100 rolls</h4>
-            </div>
+            <img src="./img/loading.gif" alt="">
           </div>
         </div>
       </div>
 
     </div>
   </ion-content>
-</ion-view>
+</ion-modal-view>
