@@ -1,6 +1,6 @@
 "use strict";
 const Mongoose = require('mongoose');
-const InventorySchema = new Mongoose.Schema({
+const OrderSchema = new Mongoose.Schema({
   amount: {type: Number, required: true},
   dateOrdered: {type: Date, default: new Date()},
   dateArrived: {type: Date},
@@ -8,4 +8,4 @@ const InventorySchema = new Mongoose.Schema({
 })
 
 
-module.exports = Mongoose.model("Inventory", InventorySchema)
+module.exports = Mongoose.model("Order", OrderSchema)

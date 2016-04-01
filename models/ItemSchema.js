@@ -20,11 +20,10 @@ const ItemSchema = new Mongoose.Schema({
   inventoryLogs:  [{type: Mongoose.Schema.Types.ObjectId, ref: "Inventory"}]
 })
 
-// ItemSchema.pre("update", preSaveOrUpdate)
-ItemSchema.pre("save", preSaveOrUpdate);
 
-function preSaveOrUpdate(next){
-  this.lastUpdated = new Date();
+ItemSchema.pre("save", preSave);
+
+function preSave(next){
   if(!(/s$/.test(this.unitType))){
     this.unitType = `${this.unitType}s`;
   }

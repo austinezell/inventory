@@ -1,7 +1,7 @@
 "use strict";
 const router = require("express").Router();
 const Item = require("../models/ItemSchema");
-const AF = require('../config/cleanArray')
+const AF = require('../config/ArrayFunctions')
 
 router.post("/add", (req, res)=>{
   if(req.body.keywords){
@@ -9,7 +9,7 @@ router.post("/add", (req, res)=>{
     req.body.keywords = AF.cleanArray(req.body.keywords);
   }
   Item.create(req.body, (err, item)=> {
-    if (err) return res.status(499).send(err);
+    if (err) return res.status(477).send(err);
 
     res.send(item);
   })
@@ -23,9 +23,9 @@ router.put("/update", (req, res)=>{
   item.keywords = item.keywords.join(" ").trim().split(/[^'\w]+/g);
   item.keywords = AF.cleanArray(item.keywords);
   Item.findById(item._id, (err, oldItem)=>{
-    if (err) return res.status(499).send(err);
+    if (err) return res.status(477).send(err);
     oldItem.update({$set: item}, (err)=>{
-      if (err) return res.status(499).send(err);
+      if (err) return res.status(477).send(err);
       res.end("Alles gut!");
     })
   })
@@ -33,7 +33,7 @@ router.put("/update", (req, res)=>{
 
 router.get('/all', (req, res)=>{
   Item.find({}, (err, items)=>{
-    if (err) return res.status(499).send(err);
+    if (err) return res.status(477).send(err);
 
     items.sort(AF.sortObjects)
     let CH1 = items.filter(item => /CH1/.test(item.location));
@@ -45,7 +45,7 @@ router.get('/all', (req, res)=>{
 
 router.get('/altogether', (req, res)=>{
   Item.find({}, (err, items)=>{
-    if (err) return res.status(499).send(err);
+    if (err) return res.status(477).send(err);
     items.sort(AF.sortObjects)
     res.send(items)
   })
@@ -53,7 +53,7 @@ router.get('/altogether', (req, res)=>{
 
 router.delete("/:id", (req, res)=>{
   Item.findByIdAndRemove(req.params.id, (err)=>{
-    err ? res.status(499).send(err) : res.end("Alles Gut!")
+    err ? res.status(477).send(err) : res.end("Alles Gut!")
   })
 })
 

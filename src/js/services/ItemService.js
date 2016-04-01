@@ -7,18 +7,18 @@
     this.addItem = (item) => {
       return $http.post('/items/add', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully added"))
-      .catch(ErrorSuccessService.handleError);
+      .catch(ErrorSuccessService.handleError)
     }
 
     this.update = (item) => {
       return $http.put('/items/update', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully updated"))
-      .catch(ErrorSuccessService.handleError);
+      .catch(ErrorSuccessService.handleError)
     }
     this.remove = (id) => {
       return $http.delete(`/items/${id}`)
       .then(ErrorSuccessService.handleSuccess("Item successfully removed"))
-      .catch(ErrorSuccessService.handleError);
+      .catch(ErrorSuccessService.handleError)
     }
 
     this.getAll = () => $http.get('/items/all').catch(ErrorSuccessService.handleError);
