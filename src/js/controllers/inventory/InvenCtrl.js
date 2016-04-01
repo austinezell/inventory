@@ -28,8 +28,10 @@
       obj = {inven, update};
       ItemService.takeInventory(obj)
     }
-
-
-
+    
+    vm.openInvenLogModal = (item) =>{
+      ModalService.createInvenLogModal(item)
+      .then(()=>ModalService.modal.show())
+    }
   }
 })()

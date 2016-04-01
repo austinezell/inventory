@@ -24,5 +24,13 @@ router.put("/takeInventory", (req, res)=>{
   })
 })
 
+router.get("/inventory", (req, res)=>{
+  Item.findById(req.body.id)
+  .populate("inventoryLogs")
+  .exec((err, item)=>{
+    err ? res.status(477).send(err) : res.send(item.inventoryLogs)
+  })
+})
+
 
 module.exports = router;
