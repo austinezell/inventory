@@ -11,7 +11,7 @@
     }
 
     this.update = (item) => {
-      return $http.put('/items/', item)
+      return $http.put('/items/update', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully updated"))
       .catch(ErrorSuccessService.handleError);
     }
