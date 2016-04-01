@@ -19,7 +19,14 @@
       .then(()=>ModalService.modal.show())
     }
     vm.update = (item)=>{
-      ItemService.takeInventory(item)
+      const location = vm.searchFilter.location,
+      key = `currentAmount${location}`,
+      amount = item[key],
+      itemId = item._id,
+      update = {key, amount, itemId},
+      inven = {location, amount},
+      obj = {inven, update};
+      ItemService.takeInventory(obj)
     }
 
 

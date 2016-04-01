@@ -4,6 +4,12 @@
 
   ItemService.$inject = ["$http", "ErrorSuccessService"];
   function ItemService($http, ErrorSuccessService){
+    this.takeInventory = (obj) =>{
+      return $http.put("/logs/takeInventory", obj)
+      .then(ErrorSuccessService.handleSuccess("Item successfully added"))
+      .catch(ErrorSuccessService.handleError)
+    }
+
     this.addItem = (item) => {
       return $http.post('/items/add', item)
       .then(ErrorSuccessService.handleSuccess("Item successfully added"))

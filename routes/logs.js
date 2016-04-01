@@ -6,16 +6,17 @@ const Order = require('../models/OrderSchema');
 const AF = require('../config/ArrayFunctions');
 
 router.put("/takeInventory", (req, res)=>{
-  Item.findById(req.body.itemId)
+  const inven = req.body.inven;
+  const update = req.body.update;
+  Item.findById(update.itemId)
   .populate("inventoryLogs")
   .exec((err, item)=>{
     if (err) return res.status(477).send(err);
-    Inventory.create(req.body.inventory, (err, inven)=>{
+    Inventory.create(inven, (err, inven)=>{
       if (err) return res.status(477).send(err);
       item.inventoryLogs.push(inven);
-      item.inventoryLogs = AF.purgeInventoryLogs(item.inventoryLogs);
-      const key = `currentAmount${inven.location}`;
-      item[key] = inven.amount;
+      item.inventoryLogs = AF.purgeInvenLogs(item.inventoryLogs);
+      item[update.key] = update.amount;
       item.save(err=>{
         err ? res.status(477).send(err) : res.end("Alles gut!");
       })
