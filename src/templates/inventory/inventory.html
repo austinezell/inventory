@@ -50,14 +50,16 @@
             </span>
             <a ng-click="Inventory.update(item)" class="btn btn-update fa fa-check"></a>
             <br>
-            <div class="col-xs-4">
-              <a href ng-click="Inventory.openInvenLogModal(item)" class="btn btn-sm more-info-btn">IL</a>
-            </div>
-            <div class="col-xs-4">
-              <a href="#/app/inventory/orders" class="btn btn-sm more-info-btn">OL</a>
-            </div>
-            <div class="col-xs-4">
-              <a href ng-click="Inventory.openItemModal(item)" class="btn btn-sm more-info-btn">ID</a>
+            <div class="lil-btns">
+              <div class="col-xs-4">
+                <a href ng-click="Inventory.openInvenLogModal(item)" class="btn btn-sm more-info-btn">IL</a>
+              </div>
+              <div class="col-xs-4">
+                <a href="#/app/inventory/orders" class="btn btn-sm more-info-btn">OL</a>
+              </div>
+              <div class="col-xs-4">
+                <a href ng-click="Inventory.openItemModal(item)" class="btn btn-sm more-info-btn">ID</a>
+              </div>
             </div>
           </div>
         </div>

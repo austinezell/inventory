@@ -1,18 +1,18 @@
 <ion-view>
   <ion-content>
     <div class="container" id="add-user">
-      <div class="row title-row">
+      <div class="title-row">
         <h1>ADD USER</h1>
       </div>
       <form name="addUserForm" ng-submit="Admin.addUser(Admin.newUser)">
 
-        <div class="row input-row">
+        <div class="input-row">
           <label for="title">NAME:</label>
           <br>
           <input required type="text" name="username" ng-model="Admin.newUser.name" ng-class="{invalid: addUserForm.username.$invalid && addUserForm.username.$touched}">
         </div>
 
-        <div class="row input-row">
+        <div class="input-row">
           <label for="title">EMAIL:</label>
           <br>
           <input required name="email" type="text"
@@ -28,7 +28,7 @@
         </div>
         </div>
 
-        <div class="row input-row">
+        <div class="input-row">
           <label for="department">DEPARTMENT:</label>
           <br>
           <div class="select">
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <div class="row input-row btns-row">
+        <div class="input-row btns-row">
           <button type="submit" ng-click="" class="btn btn-primary fa fa-envelope add-user-btn"></button>
         </form>
         <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-add-btn"></a>
