@@ -1,11 +1,11 @@
 <ion-view>
   <ion-content>
     <div class="container" id="remove-item">
-      <div class="row title-row">
+      <div class="title-row">
         <h1>REMOVE ITEM</h1>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="item-name">ITEM NAME:</label>
         <br>
         <div class="select">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div class="row input-row">
+    <div class="input-row">
       <h3>YOU CHOSE:</h3>
     </div>
     <br>
@@ -58,11 +58,11 @@
       </div>
     </div>
 
-    <div class="row trash-row">
+    <div class="trash-row">
       <button href="" ng-disabled="!Admin.item._id" ng-click="Admin.confirmDelete(Admin.item)" class="btn btn-lg trash-btn fa fa-trash"></button>
     </div>
 
-    <div class="row input-row btns-row">
+    <div class="input-row btns-row">
       <a href="#/app/admin" class="btn btn-primary fa fa-close cancel-remove-btn"></a>
     </div>
 

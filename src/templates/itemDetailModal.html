@@ -7,70 +7,74 @@
   </ion-header-bar>
   <ion-content>
     <div class="container" id="item-detail">
-      <div class="row edit-row">
+      <div class="edit-row">
         <a href="#/app/editItem" ng-click="Details.modalClose(false)"  class="edit-btn fa fa-pencil"></a>
       </div>
 
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>PICTURES:</h2>
         <div class="picture-row">
-          <img src="http://placehold.it/175" alt=""/>
-          <img src="http://placehold.it/175" alt=""/>
-          <img src="http://placehold.it/175" alt=""/>
+          <img src="http://placekitten.com/g/75" alt=""/>
+          <img src="http://placekitten.com/g/75" alt=""/>
+          <img src="http://placekitten.com/g/75" alt=""/>
         </div>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>Description:</h2>
         <p>{{Details.item.description || "No Description"}}</p>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>DEPARTMENT:</h2>
         <h3>{{Details.item.department | uppercase}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>LOCATION:</h2>
         <h3>{{Details.item.location}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>KEYWORDS:</h2>
-        <h3 ng-repeat="keyword in Details.item.keywords">{{keyword}}</h3>
+        <div class="keyword-row">
+          <h3 ng-repeat="keyword in Details.item.keywords">{{keyword}}</h3>
+        </div>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>UPC CODE:</h2>
         <h3>{{Details.item.UPC || "N/A"}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>ITEM # / MODEL #:</h2>
         <h3>{{Details.item.itemOrModelNum || "N/A"}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>PREFERRED VENDOR:</h2>
         <h3>{{Details.item.prefVendor || "N/A"}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>AMOUNT TO STOCK:</h2>
         <br>
         <h3>CH 1: {{Details.item.stockAmountCH1}} {{Details.item.unitType || "units"}}</h3>
+        <br>
         <h3>CH 2: {{Details.item.stockAmountCH2}} {{Details.item.unitType || "units"}}</h3>
       </div>
 
-      <div class="row info-row">
+      <div class="info-row">
         <h2>ORDERING THRESHOLD:</h2>
         <br>
         <h3>CH 1: {{Details.item.stockAmountCH1}} {{Details.item.unitType || "units"}} remaining</h3>
+        <br>
         <h3>CH 2: {{Details.item.stockAmountCH2}} {{Details.item.unitType || "units"}} remaining</h3>
       </div>
 
-      <div class="row edit-row">
+      <div class="edit-row">
         <a href="#/app/editItem" ng-click="Details.modalClose(false)" class="edit-btn fa fa-pencil"></a>
       </div>
 

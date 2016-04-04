@@ -6,7 +6,7 @@
 
   function ItemDetailCtrl(ModalService){
     let vm = this;
-    vm.item = ModalService.detailed;
+    vm.item = ModalService.item;
 
     vm.modalClose = (clearData) =>{
       ModalService.modal.remove()
