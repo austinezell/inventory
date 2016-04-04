@@ -202,13 +202,14 @@ select {
 }
 #remove-user .cancel-remove-btn,
 #remove-item .cancel-remove-btn {
-  font-size: 36px;
+  font-size: 18px;
   color: #333;
   background-color: #93B0D6;
-  padding: 25px 35px;
-  margin-right: 10px;
+  padding: 15px 20px;
+  float: right;
   border: none;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 #remove-user .cancel-remove-btn:active,
 #remove-item .cancel-remove-btn:active {
@@ -217,8 +218,8 @@ select {
 #remove-user .trash-row,
 #remove-item .trash-row {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 70px;
+  margin-top: 35px;
+  margin-bottom: 35px;
 }
 #remove-user button.trash-btn,
 #remove-item button.trash-btn {
@@ -288,11 +289,19 @@ select {
   text-align: center;
   font-size: 18px;
   color: #FFFAF3;
-  padding: 17px;
+  padding-left: 3px;
+  padding-top: 6px;
   background-color: #204d74;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 4px;
+}
+#edit-item .save-btn {
+  padding-left: 6px;
+}
+#item-detail .keyword-row {
+  width: 50%;
+  word-break: break-all;
 }
 #item-detail .info-row,
 #edit-item .info-row,
@@ -466,6 +475,7 @@ select {
   background-color: #93B0D6;
   color: #333;
   float: right;
+  margin-right: -25px
 }
 #take-inventory .panel-body .more-info-btn {
   background-color: #93B0D6;
@@ -476,7 +486,7 @@ select {
   margin-bottom: 10px;
 }
 #take-inventory .lil-btns {
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 #inventory-log .subtitle-row,

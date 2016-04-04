@@ -7,6 +7,10 @@
       </div>
       <form ng-submit="Item.save(Item.viewItem)">
 
+      <div class="save-row">
+        <button href type="submit" class="btn save-btn fa fa-save"></button>
+      </div>
+
       <div class="info-row">
         <h2>TITLE:</h2>
         <input required type="text" ng-model="Item.viewItem.title">
@@ -26,7 +30,7 @@
         <textarea name="" id="" cols="30" rows="4"></textarea>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="location">LOCATION:</label>
         <br>
         <div class="select">
@@ -38,7 +42,7 @@
         </div>
       </div>
 
-      <div class="row input-row">
+      <div class="input-row">
         <label for="department">DEPARTMENT:</label>
         <br>
         <div class="select">
@@ -77,6 +81,9 @@
         <label for="ch1-num">Amount:</label>
         <input ng-model="Item.viewItem.stockAmountCH1" type="number" name="ch1-num" class="num" min="1">
         <br>
+        <label for="ch1-units">Units:</label>
+        <input required ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units">
+        <br>
         <!-- <label for="ch1-units">Units (e.g. rolls/boxes):</label> -->
         <!-- <input ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units"> -->
         <br>
@@ -86,7 +93,7 @@
         <input ng-model="Item.viewItem.stockAmountCH2" type="number" name="ch2-num" class="num" min="1">
         <br>
         <label for="ch2-units">Units:</label>
-        <input required ng-model="Item.viewItem.unitType" type="text" name="ch1-units" class="units">
+        <input required ng-model="Item.viewItem.unitType" type="text" name="ch2-units" class="units">
         <br>
       </div>
 
@@ -99,8 +106,8 @@
         <h3>CH 2: <input required type="number" ng-model="Item.viewItem.thresholdCH2" name="ch2-threshold" class="num" min="0"> units remaining</h3>
       </div>
 
-      <div class="row save-row">
-        <button href type="submit" class="save-btn fa fa-save"></button>
+      <div class="save-row">
+        <button href type="submit" class="btn save-btn fa fa-save"></button>
       </div>
     </form>
 

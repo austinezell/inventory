@@ -42,11 +42,11 @@
             <h2 class="caps">{{item.title}}</h2>
             <span ng-if="Inventory.searchFilter.location === 'CH1'">
               <input min="0" ng-model="item.currentAmountCH1" type="number" value="0">
-              <span>&nbsp; / {{item.stockAmountCH1}} {{item.unitType.substr(0,6)}}</span>
+              <span>&nbsp; / {{item.stockAmountCH1}} {{item.unitType.substr(0,7)}}</span>
             </span>
             <span ng-if="Inventory.searchFilter.location === 'CH2'">
               <input min="0" ng-model="item.currentAmountCH2" type="number" value="0">
-              <span>&nbsp; / {{item.stockAmountCH2}} {{item.unitType.substr(0,6)}}</span>
+              <span>&nbsp; / {{item.stockAmountCH2}} {{item.unitType.substr(0,7)}}</span>
             </span>
             <a ng-click="Inventory.update(item)" class="btn btn-update fa fa-check"></a>
             <br>
