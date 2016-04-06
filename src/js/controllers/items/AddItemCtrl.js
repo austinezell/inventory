@@ -7,6 +7,7 @@
   function AddItemCtrl(ItemService, ErrorSuccessService){
     let vm = this;
     vm.title = "Add Item";
+    vm.invalidItem = false;
     vm.viewItem = {
       thresholdCH1: 0,
       thresholdCH2: 0,
@@ -15,11 +16,14 @@
     }
     vm.save = function(item) {
       ItemService.addItem(item)
-      .then(()=> vm.viewItem = {
-        thresholdCH1: 0,
-        thresholdCH2: 0,
-        stockAmountCH1: 1,
-        stockAmountCH2: 1
+      .then(()=> {
+        vm.invalidItem = false;
+        vm.viewItem = {
+          thresholdCH1: 0,
+          thresholdCH2: 0,
+          stockAmountCH1: 1,
+          stockAmountCH2: 1
+        }
       });
     }
 

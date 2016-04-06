@@ -11,10 +11,18 @@
   }
 }
 
-.input-row input.invalid{
+input.invalid{
   border-bottom-color: red !important;
 }
 
+select.invalid {
+  border: 1px solid red !important;
+}
+
+.invalid-message {
+  color: red;
+  text-align: left;
+}
 .error-message-container{
   height: 31px;
   .error-message{
@@ -34,4 +42,9 @@ button.button.button-clear {
 
 .row {
   text-align: center;
+}
+#edit-item {
+  .save-row {
+    text-align: left !important;
+  }
 }
