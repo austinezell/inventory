@@ -7,16 +7,20 @@
   function AddItemCtrl(ItemService, ErrorSuccessService){
     let vm = this;
     vm.title = "Add Item";
-    let viewItem = {
+    vm.viewItem = {
       thresholdCH1: 0,
       thresholdCH2: 0,
       stockAmountCH1: 1,
       stockAmountCH2: 1
     }
-    vm.viewItem = viewItem;
     vm.save = function(item) {
       ItemService.addItem(item)
-      .then(()=> vm.viewItem = viewItem);
+      .then(()=> vm.viewItem = {
+        thresholdCH1: 0,
+        thresholdCH2: 0,
+        stockAmountCH1: 1,
+        stockAmountCH2: 1
+      });
     }
 
   }
