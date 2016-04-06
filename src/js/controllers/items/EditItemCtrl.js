@@ -7,7 +7,7 @@
   function EditItemCtrl(ItemService, ModalService, $ionicPopup){
     let vm = this;
     vm.title = "Edit Item";
-    vm.viewItem = ModalService.detailed;
+    vm.viewItem = ModalService.item;
 
     vm.save = (item) => ItemService.update(item);
 

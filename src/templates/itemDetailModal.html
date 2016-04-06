@@ -1,6 +1,6 @@
 <ion-modal-view ng-controller="ItemDetailCtrl as Details">
   <ion-header-bar>
-    <h1 class="title">{{Details.item.title | uppercase}} Details</h1>
+    <h1 class="title caps">{{Details.item.title}} Details</h1>
     <div class="buttons">
       <button class="button button-clear" ng-click="Details.modalClose(true)">Close</button>
     </div>
@@ -28,7 +28,7 @@
 
       <div class="info-row">
         <h2>DEPARTMENT:</h2>
-        <h3>{{Details.item.department | uppercase}}</h3>
+        <h3 class="caps">{{Details.item.department}}</h3>
       </div>
 
       <div class="info-row">

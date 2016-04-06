@@ -45,10 +45,14 @@
         </div>
       </div>
       <div class="row save-row">
-        <button href ng-click="Admin.save(Admin.selected)" class="save-user-btn fa fa-save"></button>
+        <button ng-disabled="!Admin.selected._id" type="submit" class="save-user-btn fa fa-save"></button>
       </div>
 
     </form>
+    <div class="row trash-row">
+      <button ng-disabled="!Admin.selected._id" ng-click="Admin.removeUser(Admin.selected)" class="btn btn-lg trash-btn fa fa-trash"></button>
+    </div>
+
 
   </ion-content>
 </ion-view>

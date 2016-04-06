@@ -27,11 +27,10 @@
       inven = {location, amount},
       obj = {inven, update};
       InventoryService.takeInventory(obj)
-    }
-
+    };
     vm.openInvenLogModal = (item) =>{
       ModalService.createInvenLogModal(item, vm.searchFilter.location)
       .then(()=>ModalService.modal.show())
-    }
+    };
   }
 })()

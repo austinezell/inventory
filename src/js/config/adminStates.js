@@ -34,16 +34,6 @@
         }
       }
     })
-    .state("app.admin.removeUser", {
-      url: "/removeUser",
-      views:{
-        "content@app":{
-          templateUrl: "./templates/admin/removeUser.html",
-          controller: "RemoveUserCtrl",
-          controllerAs: "Admin"
-        }
-      }
-    })
     .state("app.admin.removeItem", {
       url: "/removeItem",
       views:{

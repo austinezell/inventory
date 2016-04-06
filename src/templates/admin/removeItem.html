@@ -49,9 +49,9 @@
     <br>
     <div class="panel panel-default">
       <div class="panel-body" ng-show="Admin.item._id">
-        <h2>{{Admin.item.title | uppercase}}</h2>
-        <span>{{Admin.item.department | uppercase}} |</span>
-        <span>{{Admin.item.location | uppercase}}</span>
+        <h2 class="caps">{{Admin.item.title}}</h2>
+        <span class='caps'>{{Admin.item.department}} |</span>
+        <span class='caps'>{{Admin.item.location}}</span>
       </div>
       <div class="panel-body" ng-hide="Admin.item._id">
         <span>No Item Selected</span>
