@@ -36,10 +36,10 @@
         <div class="input-row">
           <label for="location">LOCATION:</label>
           <br>
-          <div class="select">
+          <div class="select" ng-class=
+          "{invalid: itemForm.location.$invalid && Item.invalidItem}">
             <select name="location"
-            required ng-model="Item.viewItem.location" ng-class=
-            "{invalid: itemForm.location.$invalid && Item.invalidItem}"
+            required ng-model="Item.viewItem.location"
             id="location">
               <option value="CH1">CH 1</option>
               <option value="CH2">CH 2</option>
@@ -51,7 +51,8 @@
         <div class="input-row">
           <label for="department">DEPARTMENT:</label>
           <br>
-          <div class="select">
+          <div class="select" ng-class=
+          "{invalid: itemForm.department.$invalid && Item.invalidItem}">
             <select name="department"
             required ng-model="Item.viewItem.department" ng-class=
             "{invalid: itemForm.department.$invalid && Item.invalidItem}"

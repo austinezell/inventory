@@ -17,7 +17,6 @@
     vm.save = function(item) {
       ItemService.addItem(item)
       .then(()=> {
-        vm.invalidItem = false;
         vm.viewItem = {
           thresholdCH1: 0,
           thresholdCH2: 0,
