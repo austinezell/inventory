@@ -4,7 +4,7 @@
   .service("ErrorSuccessService", ErrorSuccessService)
   ErrorSuccessService.$inject = ["$ionicPopup"]
   function ErrorSuccessService($ionicPopup){
-    this.handleError = (err)=>{
+    this.handleError = ()=>{
       $ionicPopup.alert({
         title: "Error!",
         cssClass: "error",

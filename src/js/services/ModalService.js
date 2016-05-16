@@ -4,7 +4,7 @@
 
   ModalService.$inject = ["$ionicModal"];
   function ModalService($ionicModal){
-    this.detaied = null;
+    this.item = null;
     this.modal = null;
     this.createItemModal = (item) =>{
       this.item = item;
